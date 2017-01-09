@@ -32,10 +32,10 @@
                         </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="x6I-Hd-gQk"/>
                                 <exclude reference="8TU-L9-mKr"/>
                                 <exclude reference="AQk-mm-E4S"/>
                                 <exclude reference="OtD-mk-IOY"/>
+                                <exclude reference="x6I-Hd-gQk"/>
                             </mask>
                         </variation>
                     </imageView>
@@ -86,9 +86,9 @@
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="qGg-4V-ccv"/>
                                 <exclude reference="IPg-u4-FMz"/>
                                 <exclude reference="fCn-cf-DPu"/>
+                                <exclude reference="qGg-4V-ccv"/>
                             </mask>
                         </variation>
                     </label>

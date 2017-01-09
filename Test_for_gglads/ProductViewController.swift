@@ -24,6 +24,7 @@ class ProductViewController: UIViewController
     var categories = [Category]()
     weak var popController : CategoriesViewController!
     var backView : UIView! //when categories opened
+    var selectedProduct : Product?
 }
 
 
@@ -237,6 +238,31 @@ extension ProductViewController : TitleButtonDelegate
         if self.titleButton.isSelect
         {
             self.titleButton.isSelect = false
+        }
+    }
+}
+
+
+//MARK: DID SELECT CELL
+extension ProductViewController
+{
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        selectedProduct = dataSource[indexPath.row]
+        performSegueWithIdentifier("toDetail", sender: self)
+    }
+}
+
+
+//MARK: PREPARE FOR SEGUE
+extension ProductViewController
+{
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
+        if segue.identifier == "toDetail"
+        {
+            let destinationViewController = segue.destinationViewController as! DetailViewController
+            destinationViewController.productModel = self.selectedProduct
         }
     }
 }
