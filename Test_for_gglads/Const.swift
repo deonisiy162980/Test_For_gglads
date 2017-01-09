@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 class Const
 {
@@ -24,5 +24,10 @@ class Const
         static let kAccessToken = "access_token"
         static let kDay = "day"
         static let kDays_ago = "days_ago"
+    }
+    
+    class appColors
+    {
+        static let defaultBlueColor = UIColor(red:0/255.0, green:122/255.0, blue:255/255.0, alpha: 1.0)
     }
 }

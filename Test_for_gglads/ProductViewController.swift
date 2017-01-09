@@ -16,14 +16,14 @@ var category = "testCategory"
 class ProductViewController: UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
-    weak var titleButton : UIButton!
+    weak var titleButton : TitleButton!
     
-//    var objectsFromCoreData : [Product] {
-//        return Product.loadToSwiftArray()
-//    }
+    
     var refreshControl : UIRefreshControl!
     var dataSource = [Product]()
     var categories = [Category]()
+    weak var popController : CategoriesViewController!
+    var backView : UIView! //when categories opened
 }
 
 
@@ -53,12 +53,9 @@ extension ProductViewController
         let navBarHeight = self.navigationController?.navigationBar.frame.height
         let button =  TitleButton(frame: CGRectMake(0, 0, navBarWidth!/3 + 15, navBarHeight!))
 //        button.backgroundColor = UIColor.redColor()
-        button.setTitleColor(.blackColor(), forState: .Normal)
-        button.titleLabel?.font = UIFont(name: "Arial", size: 22)
-//        button.setTitle("Category 1", forState: UIControlState.Normal)
-        button.addTarget(self, action: #selector(titleButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
         titleButton = button
         self.navigationItem.titleView = titleButton
+        titleButton.delegate = self
         
         
         //load
@@ -172,10 +169,74 @@ extension ProductViewController
 
 
 //MARK: TITLE BUTTON
-extension ProductViewController
+extension ProductViewController : TitleButtonDelegate
 {
-    func titleButtonClicked()
+    func openCategories()
     {
-        
+        if popController == nil
+        {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.popController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("categoryView") as! CategoriesViewController
+                self.addChildViewController(self.popController)
+                
+                let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+                let categoriesTableViewHeight = self.popController.rowHeight * CGFloat(self.categories.count)
+                
+                self.popController.view.frame = CGRectMake(0, -1 * (self.navigationController?.navigationBar.frame.height)! - statusBarHeight - categoriesTableViewHeight, self.view.frame.width, categoriesTableViewHeight)
+                
+                if self.backView == nil
+                {
+                    self.backView = UIView(frame: self.view.frame)
+                    let gesture = UITapGestureRecognizer(target: self, action: #selector(self.closeCategoriesByTappingBackView))
+                    self.backView.addGestureRecognizer(gesture)
+                }
+                self.backView.backgroundColor = UIColor.clearColor()
+                self.view.addSubview(self.backView)
+                
+                UIView.animateWithDuration(0.5) {
+                    self.backView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.8)
+                    self.popController.view.frame = CGRectMake(0, (self.navigationController?.navigationBar.frame.height)! + statusBarHeight, self.view.frame.width, categoriesTableViewHeight)
+                }
+                
+                self.popController.categoriesDataSource = self.categories
+                self.popController.mainController = self
+                
+                self.view.addSubview(self.popController.view)
+                self.popController.didMoveToParentViewController(self)
+            })
+        }
+    }
+    
+    
+    func closeCategories()
+    {
+        if popController != nil
+        {
+            dispatch_async(dispatch_get_main_queue(), {
+                let statusBarHeight = UIApplication.sharedApplication().statusBarFrame.size.height
+                let categoriesTableViewHeight = self.popController.rowHeight * CGFloat(self.categories.count)
+                
+                UIView.animateWithDuration(0.5, animations: {
+                    
+                    self.popController.view.frame = CGRectMake(0, -1 * (self.navigationController?.navigationBar.frame.height)! - statusBarHeight - categoriesTableViewHeight, self.view.frame.width, categoriesTableViewHeight)
+                    self.backView.backgroundColor = UIColor.clearColor()
+                    
+                    }, completion: { (hide) in
+                        self.popController.removeFromParentViewController()
+                        self.backView.removeFromSuperview()
+                })
+                
+            })
+            
+        }
+    }
+    
+    
+    func closeCategoriesByTappingBackView()
+    {
+        if self.titleButton.isSelect
+        {
+            self.titleButton.isSelect = false
+        }
     }
 }

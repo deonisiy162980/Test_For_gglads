@@ -24,6 +24,7 @@ class GetPostsManager
                 
                 let productsArray = JsonResponse["posts"].arrayValue
                 
+                var flag = true
                 for product in productsArray
                 {
                     let pID = product["id"].int64Value
@@ -37,7 +38,17 @@ class GetPostsManager
                     
                     let categoryName = Category.reciveNameOfCategory(withId: pCategory, context: privateContext)
                     
-                    ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: pText, withProductLikes: pLikesCount, withProductCategory: categoryName, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withContext: privateContext)
+                    if flag
+                    {
+                        let x = "fefwefaefbhehfwehfflherfbkerjblkjbsjkdfbljkbnkjefwefaefbhehfwehfflherfbkerjblkjbsjkdfbljkbnkjrnjkn;efwefaefbhehfwehfflherfbkerjblkjbsjkdfbljkbnkjrnjkn;rnjkn;jngjkabregbkragkbskljbgjlksrbgjr"
+                        ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: x, withProductLikes: pLikesCount, withProductCategory: categoryName, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withContext: privateContext)
+                    }
+                    else
+                    {
+                        ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: pText, withProductLikes: pLikesCount, withProductCategory: categoryName, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withContext: privateContext)
+                    }
+                    
+                    flag = false
                 }
                 
                 

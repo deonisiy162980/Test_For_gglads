@@ -39,18 +39,24 @@ class ProductTableViewCell: UITableViewCell
     }
     
     
+    override func prepareForReuse()
+    {
+        showAllButtonTopConstraint.constant = 8
+    }
+    
+    
     func configureCell( model: Product )
     {
         cellModel = model
         
-//        if model.id % 2 == 0
-//        {
-//            self.backgroundColor = UIColor.redColor()
-//        }
-//        else
-//        {
-//            self.backgroundColor = UIColor.blueColor()
-//        }
+        if model.id % 2 == 0
+        {
+            self.backgroundColor = UIColor.redColor()
+        }
+        else
+        {
+            self.backgroundColor = UIColor.blueColor()
+        }
         
         let inset : CGFloat = 76
         separatorInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: 0)
@@ -72,10 +78,10 @@ class ProductTableViewCell: UITableViewCell
         {
             if model.productText?.characters.count <= 78
             {
-                self.backgroundColor = UIColor.blueColor()
+//                self.backgroundColor = UIColor.blueColor()
                 showAllButton.alpha = 0.0
                 showAllButton.enabled = false
-                showAllButtonTopConstraint.constant = 0
+//                showAllButtonTopConstraint.constant = -2
                 self.productText.text = model.productText
                 showAllButton.isSelect = false
             }
@@ -84,7 +90,7 @@ class ProductTableViewCell: UITableViewCell
                 self.backgroundColor = UIColor.redColor()
                 showAllButton.alpha = 1.0
                 showAllButton.enabled = true
-                showAllButtonTopConstraint.constant = 8
+//                showAllButtonTopConstraint.constant = 8
                 let txt = model.productText
                 self.productText.text = txt![(txt?.startIndex.advancedBy(0))!...(txt?.startIndex.advancedBy(78))!]
                 showAllButton.isSelect = false
@@ -95,10 +101,11 @@ class ProductTableViewCell: UITableViewCell
             productText.text = model.productText
             showAllButton.alpha = 1.0
             showAllButton.enabled = true
-            showAllButtonTopConstraint.constant = 8
+//            showAllButtonTopConstraint.constant = 8
             showAllButton.isSelect = true
         }
         
+//        print(productText.calculateLines(forLabelHeight: <#T##CGFloat#>))
     }
 }
 

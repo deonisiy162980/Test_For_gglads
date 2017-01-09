@@ -12,6 +12,7 @@ class TitleButton: UIButton
 {
     var animDidEnd = true
     var image = UIImage(named: "arrowDownTitle")
+    var delegate : TitleButtonDelegate?
     
     
     override init(frame: CGRect)
@@ -34,10 +35,12 @@ class TitleButton: UIButton
             if isSelect
             {
                 self.setImage(UIImage(named: "arrowUpTitle"), forState: .Normal)
+                self.delegate?.openCategories()
             }
             else
             {
                 self.setImage(UIImage(named: "arrowDownTitle"), forState: .Normal)
+                self.delegate?.closeCategories()
             }
             layoutSubviews()
         }
@@ -86,6 +89,9 @@ extension TitleButton
     override func setTitle(title: String?, forState state: UIControlState)
     {
         super.setTitle(title, forState: state)
+        
+        self.setTitleColor(.blackColor(), forState: .Normal)
+        self.titleLabel?.font = UIFont(name: "Arial", size: 22)
         
         self.titleEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, image!.size.width);
         self.imageEdgeInsets = UIEdgeInsetsMake(4.0, self.frame.size.width + (image!.size.width) - 30, 0.0, 0.0)

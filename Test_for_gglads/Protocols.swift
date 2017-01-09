@@ -12,3 +12,9 @@ protocol ProductCellDelegate: class
 {
     func showAllTapped(cellModel : ProductTableViewCell)
 }
+
+protocol TitleButtonDelegate: class
+{
+    func openCategories()
+    func closeCategories()
+}

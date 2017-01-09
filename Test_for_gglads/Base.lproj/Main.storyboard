@@ -54,6 +54,72 @@
             </objects>
             <point key="canvasLocation" x="1100" y="334"/>
         </scene>
+        <!--Categories View Controller-->
+        <scene sceneID="dja-FR-6k1">
+            <objects>
+                <viewController storyboardIdentifier="categoryView" id="cqb-AR-TIc" customClass="CategoriesViewController" customModule="Test_for_gglads" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c8p-Kh-41f"/>
+                        <viewControllerLayoutGuide type="bottom" id="kBI-Ix-zaO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9QU-ng-l28">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LsZ-hu-bUS">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="categoryCell" id="0RI-CR-gu8" customClass="CategoryTableViewCell" customModule="Test_for_gglads" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="328" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0RI-CR-gu8" id="ZSC-pH-4ae">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTG-wV-hIO">
+                                                    <rect key="frame" x="8" y="10" width="312" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fTG-wV-hIO" firstAttribute="top" secondItem="ZSC-pH-4ae" secondAttribute="topMargin" constant="2" id="Mx6-H9-0sR"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="fTG-wV-hIO" secondAttribute="bottom" constant="1" id="OXT-fI-Ddq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fTG-wV-hIO" secondAttribute="trailing" id="cIj-FZ-Gwy"/>
+                                                <constraint firstItem="fTG-wV-hIO" firstAttribute="leading" secondItem="ZSC-pH-4ae" secondAttribute="leadingMargin" id="vDH-Ur-xrB"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryName" destination="fTG-wV-hIO" id="kf8-DY-NaJ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cqb-AR-TIc" id="L85-am-8aT"/>
+                                    <outlet property="delegate" destination="cqb-AR-TIc" id="Zgm-9p-fKM"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="LsZ-hu-bUS" secondAttribute="trailing" constant="-20" id="7VQ-RF-eRC"/>
+                            <constraint firstItem="LsZ-hu-bUS" firstAttribute="top" secondItem="9QU-ng-l28" secondAttribute="topMargin" id="CbB-qn-Miu"/>
+                            <constraint firstItem="kBI-Ix-zaO" firstAttribute="top" secondItem="LsZ-hu-bUS" secondAttribute="bottom" id="LMg-3a-mZm"/>
+                            <constraint firstItem="LsZ-hu-bUS" firstAttribute="leading" secondItem="9QU-ng-l28" secondAttribute="leadingMargin" constant="-20" id="wyC-yb-3ac"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="200"/>
+                    <connections>
+                        <outlet property="tableView" destination="LsZ-hu-bUS" id="tTm-Kc-mVS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="73e-Es-Dvv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1432" y="214"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="44r-FL-PGU">
             <objects>
