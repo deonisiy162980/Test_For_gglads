@@ -16,7 +16,7 @@ class ProductFabric
                                withProductName name : String,
                                withProductText text: String,
                                withProductLikes likes : Int16,
-                               withProductCategory category : Int16,
+                               withProductCategory category : String,
                                withProductImage image : String?,
                                withSelfLike selfLike : Bool,
                                withProductRedirectURL redirectURL: String?,

@@ -101,3 +101,31 @@ extension API_WRAPPER
         return task
     }
 }
+
+
+//MARK: Получение списка категорий
+extension API_WRAPPER
+{
+    class func getCategoriesList ( success : (JsonResponse : JSON) -> Void, failure : (errorCode : Int) -> Void ) -> NSURLSessionDataTask
+    {
+        let argsDictionary = NSMutableDictionary()
+        
+        argsDictionary.setObject(Const.AppApiConst.kAccessToken, forKey: Const.AppApiAttributes.kAccessToken)
+        
+        let request = composeGenericHTTPRequest(withArguments: argsDictionary, forBaseURL: Const.AppApiConst.kBaseMethod + Const.AppApiConst.kGetCategories)
+        
+        //        let timeOutError = DPClass.dispatchAfter(8) {
+        //            generalCompletionCallback(nil, response: nil, error: NSError(domain: "d", code: -1001, userInfo: nil), succes: success, failureBlock: failure)
+        //            return
+        //        }
+        
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { (data, response, error) in
+            
+            //            DPClass.cancel_dispatch_after(timeOutError)
+            generalCompletionCallback(data, response: response, error: error, succes: success, failureBlock: failure)
+        }
+        
+        task.resume()
+        return task
+    }
+}

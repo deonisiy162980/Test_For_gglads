@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		2A2807E1F3EFEB4E0331F0A4 /* Pods_Test_for_gglads.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C4A617727D44316F5DED69 /* Pods_Test_for_gglads.framework */; };
+		33F590771E23970700ADF0C2 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F590761E23970700ADF0C2 /* TitleButton.swift */; };
+		33F5907B1E23ABB500ADF0C2 /* GetCategoriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F5907A1E23ABB500ADF0C2 /* GetCategoriesManager.swift */; };
+		33F5907F1E23ACC600ADF0C2 /* Category+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F5907D1E23ACC600ADF0C2 /* Category+CoreDataProperties.swift */; };
+		33F590801E23ACC600ADF0C2 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F5907E1E23ACC600ADF0C2 /* Category.swift */; };
+		33F590821E23AD5A00ADF0C2 /* CategoryFabric.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F590811E23AD5A00ADF0C2 /* CategoryFabric.swift */; };
+		33F590841E23B30D00ADF0C2 /* LoadCategoriesFromCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F590831E23B30D00ADF0C2 /* LoadCategoriesFromCoreDataManager.swift */; };
 		33FB9F201E22BE30005B6913 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F1F1E22BE30005B6913 /* UILabel.swift */; };
 		33FB9F251E22C4EA005B6913 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F231E22C4EA005B6913 /* SwiftyJSON.swift */; };
 		33FB9F261E22C4EA005B6913 /* API_WRAPPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F241E22C4EA005B6913 /* API_WRAPPER.swift */; };
@@ -35,6 +41,12 @@
 
 /* Begin PBXFileReference section */
 		22535185546140ADEC093485 /* Pods-Test_for_gglads.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Test_for_gglads.release.xcconfig"; path = "Pods/Target Support Files/Pods-Test_for_gglads/Pods-Test_for_gglads.release.xcconfig"; sourceTree = "<group>"; };
+		33F590761E23970700ADF0C2 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		33F5907A1E23ABB500ADF0C2 /* GetCategoriesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetCategoriesManager.swift; sourceTree = "<group>"; };
+		33F5907D1E23ACC600ADF0C2 /* Category+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Category+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		33F5907E1E23ACC600ADF0C2 /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		33F590811E23AD5A00ADF0C2 /* CategoryFabric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryFabric.swift; sourceTree = "<group>"; };
+		33F590831E23B30D00ADF0C2 /* LoadCategoriesFromCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCategoriesFromCoreDataManager.swift; sourceTree = "<group>"; };
 		33FB9F1F1E22BE30005B6913 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		33FB9F231E22C4EA005B6913 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		33FB9F241E22C4EA005B6913 /* API_WRAPPER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_WRAPPER.swift; sourceTree = "<group>"; };
@@ -82,6 +94,16 @@
 				43C4A617727D44316F5DED69 /* Pods_Test_for_gglads.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		33F5907C1E23ACAB00ADF0C2 /* Category Model */ = {
+			isa = PBXGroup;
+			children = (
+				33F5907D1E23ACC600ADF0C2 /* Category+CoreDataProperties.swift */,
+				33F5907E1E23ACC600ADF0C2 /* Category.swift */,
+				33F590811E23AD5A00ADF0C2 /* CategoryFabric.swift */,
+			);
+			name = "Category Model";
 			sourceTree = "<group>";
 		};
 		33FB9F1E1E22BE1E005B6913 /* CLASS EXTENSIONS */ = {
@@ -132,6 +154,7 @@
 			children = (
 				33FD57571E200ABB00ADA93C /* LikeButton.swift */,
 				33FD57591E200CB400ADA93C /* ShowAllButton.swift */,
+				33F590761E23970700ADF0C2 /* TitleButton.swift */,
 			);
 			name = CustomClasses;
 			sourceTree = "<group>";
@@ -229,6 +252,7 @@
 		33FE04521E1EE3B10061A044 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				33F5907C1E23ACAB00ADF0C2 /* Category Model */,
 				33FE04571E1EE45D0061A044 /* ProductModel */,
 			);
 			name = Models;
@@ -249,6 +273,8 @@
 			children = (
 				33FE04591E1EE6EE0061A044 /* FirstRunManager.swift */,
 				33FB9F2A1E22CAB7005B6913 /* GetPostsManager.swift */,
+				33F5907A1E23ABB500ADF0C2 /* GetCategoriesManager.swift */,
+				33F590831E23B30D00ADF0C2 /* LoadCategoriesFromCoreDataManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -409,6 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F5907B1E23ABB500ADF0C2 /* GetCategoriesManager.swift in Sources */,
 				33FE045F1E1EE88C0061A044 /* ProductFabric.swift in Sources */,
 				33FE04311E1ECA8D0061A044 /* ProductViewController.swift in Sources */,
 				33FD6BA91E214E8B0012B0AF /* Protocols.swift in Sources */,
@@ -422,11 +449,16 @@
 				33FB9F2B1E22CAB7005B6913 /* GetPostsManager.swift in Sources */,
 				33FB9F261E22C4EA005B6913 /* API_WRAPPER.swift in Sources */,
 				33FE045D1E1EE7FB0061A044 /* CoreDataManager.swift in Sources */,
+				33F590801E23ACC600ADF0C2 /* Category.swift in Sources */,
 				33FD57581E200ABB00ADA93C /* LikeButton.swift in Sources */,
 				33FB9F361E22CFBF005B6913 /* Product+CoreDataProperties.swift in Sources */,
 				33FB9F291E22C53B005B6913 /* Const.swift in Sources */,
+				33F5907F1E23ACC600ADF0C2 /* Category+CoreDataProperties.swift in Sources */,
 				33FD575A1E200CB400ADA93C /* ShowAllButton.swift in Sources */,
+				33F590821E23AD5A00ADF0C2 /* CategoryFabric.swift in Sources */,
+				33F590841E23B30D00ADF0C2 /* LoadCategoriesFromCoreDataManager.swift in Sources */,
 				33FB9F2F1E22CB97005B6913 /* Alerts.swift in Sources */,
+				33F590771E23970700ADF0C2 /* TitleButton.swift in Sources */,
 				33FE04561E1EE4520061A044 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

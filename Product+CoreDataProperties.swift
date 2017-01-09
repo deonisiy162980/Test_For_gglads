@@ -14,7 +14,7 @@ import CoreData
 
 extension Product
 {
-    @NSManaged var category: Int16
+    @NSManaged var category: String?
     @NSManaged var id: Int64
     @NSManaged var productImage: String?
     @NSManaged var productLikes: Int16

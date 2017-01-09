@@ -18,35 +18,51 @@ class GetPostsManager
         let privateContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
         privateContext.parentContext = CoreDataManager.instance.managedObjectContext
         
-        API_WRAPPER.getProductList({ (JsonResponse) in
+        GetCategoriesManager.getProductsList(privateContext, success: {
             
-            let productsArray = JsonResponse["posts"].arrayValue
-            
-            for product in productsArray
-            {
-                let pID = product["id"].int64Value
-                let pName = product["name"].stringValue
-                let pLikesCount = product["votes_count"].int16Value
-                let pText = product["tagline"].stringValue
-                let pImage = product["screenshot_url"]["300px"].stringValue
-                let pRedirectURL = product["redirect_url"].stringValue
-                let pCategory = product["category_id"].int16Value
-//                let pThumbnail = product["thumbnail"]["image_url"].stringValue
+            API_WRAPPER.getProductList({ (JsonResponse) in
                 
-                ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: pText, withProductLikes: pLikesCount, withProductCategory: pCategory, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withContext: privateContext)
+                let productsArray = JsonResponse["posts"].arrayValue
+                
+                for product in productsArray
+                {
+                    let pID = product["id"].int64Value
+                    let pName = product["name"].stringValue
+                    let pLikesCount = product["votes_count"].int16Value
+                    let pText = product["tagline"].stringValue
+                    let pImage = product["screenshot_url"]["300px"].stringValue
+                    let pRedirectURL = product["redirect_url"].stringValue
+                    let pCategory = product["category_id"].int16Value
+                    //                let pThumbnail = product["thumbnail"]["image_url"].stringValue
+                    
+                    let categoryName = Category.reciveNameOfCategory(withId: pCategory, context: privateContext)
+                    
+                    ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: pText, withProductLikes: pLikesCount, withProductCategory: categoryName, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withContext: privateContext)
+                }
+                
+                
+                try? privateContext.save()
+                success()
+                
+            }) { (errorCode) in
+                
+                failure(errorCode: errorCode)
             }
-            
-            
-            try? privateContext.save()
-            success()
             
         }) { (errorCode) in
             
-            failure(errorCode: errorCode)
+            failure(errorCode: 1)
+            
         }
+        
+        
     }
-    
+}
+
+
 //MARK: Показывает всплывающее вверху окно с ошибкой
+extension GetPostsManager
+{
     private class func showError(errorCode : Int, viewController : UIViewController, hasTopBar : Bool)
     {
         if errorCode == 0

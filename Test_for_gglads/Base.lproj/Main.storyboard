@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Выбор продукта-->
+        <!--Product View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ProductViewController" customModule="Test_for_gglads" customModuleProvider="target" sceneMemberID="viewController">
@@ -44,7 +44,7 @@
                             <constraint firstItem="MRg-nx-fUb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-24" id="oxE-CL-Zaq"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Выбор продукта" id="1ea-Tl-Iqd"/>
+                    <navigationItem key="navigationItem" id="1ea-Tl-Iqd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="tableView" destination="MRg-nx-fUb" id="SR0-ZP-Aja"/>

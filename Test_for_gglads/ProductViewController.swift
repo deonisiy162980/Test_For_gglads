@@ -16,12 +16,14 @@ var category = "testCategory"
 class ProductViewController: UIViewController
 {
     @IBOutlet weak var tableView: UITableView!
+    weak var titleButton : UIButton!
     
 //    var objectsFromCoreData : [Product] {
 //        return Product.loadToSwiftArray()
 //    }
     var refreshControl : UIRefreshControl!
     var dataSource = [Product]()
+    var categories = [Category]()
 }
 
 
@@ -45,6 +47,21 @@ extension ProductViewController
         refreshControl.backgroundColor = .clearColor()
         tableView.addSubview(refreshControl)
         
+        
+        //title button
+        let navBarWidth = self.navigationController?.navigationBar.frame.width
+        let navBarHeight = self.navigationController?.navigationBar.frame.height
+        let button =  TitleButton(frame: CGRectMake(0, 0, navBarWidth!/3 + 15, navBarHeight!))
+//        button.backgroundColor = UIColor.redColor()
+        button.setTitleColor(.blackColor(), forState: .Normal)
+        button.titleLabel?.font = UIFont(name: "Arial", size: 22)
+//        button.setTitle("Category 1", forState: UIControlState.Normal)
+        button.addTarget(self, action: #selector(titleButtonClicked), forControlEvents: UIControlEvents.TouchUpInside)
+        titleButton = button
+        self.navigationItem.titleView = titleButton
+        
+        
+        //load
         if Product.loadToSwiftArray().count == 0
         {
             Alert.instance.showLoadingAlert(atView: self.view, withNavigationController: self.navigationController)
@@ -53,7 +70,11 @@ extension ProductViewController
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     Alert.instance.closeLoadingAlert(Alert.instance.alert)
-                    self.dataSource = Product.loadToSwiftArray()
+                    
+                    self.categories = Category.loadToSwiftArray()
+                    self.titleButton.setTitle(self.categories.first?.name, forState: .Normal)
+                    
+                    self.dataSource = Product.loadToSwiftArray(withCategory: self.categories.first!)
                     self.tableView.reloadData()
                 })
                 
@@ -65,7 +86,10 @@ extension ProductViewController
         else
         {
             dispatch_async(dispatch_get_main_queue(), {
-                self.dataSource = Product.loadToSwiftArray()
+                self.categories = Category.loadToSwiftArray()
+                self.titleButton.setTitle(self.categories.first?.name, forState: .Normal)
+                
+                self.dataSource = Product.loadToSwiftArray(withCategory: self.categories.first!)
                 self.tableView.reloadData()
             })
         }
@@ -143,5 +167,15 @@ extension ProductViewController
             }
             
         })
+    }
+}
+
+
+//MARK: TITLE BUTTON
+extension ProductViewController
+{
+    func titleButtonClicked()
+    {
+        
     }
 }

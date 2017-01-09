@@ -36,4 +36,29 @@ class Product: NSManagedObject
         return arrayToReturn
     }
     
+    
+    class func loadToSwiftArray(withCategory category : Category) -> [Product]
+    {
+        var arrayToReturn = [Product]()
+        
+        let fetchRequest = NSFetchRequest(entityName: "Product")
+        fetchRequest.predicate = NSPredicate(format: "category == %@", category.name!)
+        do
+        {
+            if let fetchResults = try CoreDataManager.instance.managedObjectContext.executeFetchRequest(fetchRequest) as? [Product]
+            {
+                for fetchedProduct in fetchResults
+                {
+                    arrayToReturn.append(fetchedProduct)
+                }
+                
+                arrayToReturn.sortInPlace({ $0.id < $1.id })
+                
+                return arrayToReturn
+            }
+        }
+        catch{}
+        
+        return arrayToReturn
+    }
 }
