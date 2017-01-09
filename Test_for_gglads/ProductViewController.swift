@@ -20,6 +20,7 @@ class ProductViewController: UIViewController
 //    var objectsFromCoreData : [Product] {
 //        return Product.loadToSwiftArray()
 //    }
+    var refreshControl : UIRefreshControl!
     var dataSource = [Product]()
 }
 
@@ -31,21 +32,42 @@ extension ProductViewController
     {
         super.viewDidLoad()
         
+        //register nibb for tableView
         let nib = UINib(nibName: "ProductTableViewCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: ProductCell)
         tableView.estimatedRowHeight = 70.0
         tableView.rowHeight = UITableViewAutomaticDimension
         
-        GetPostsManager.getProductsList({ 
+        
+        //refresh
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl.backgroundColor = .clearColor()
+        tableView.addSubview(refreshControl)
+        
+        if Product.loadToSwiftArray().count == 0
+        {
+            Alert.instance.showLoadingAlert(atView: self.view, withNavigationController: self.navigationController)
             
+            GetPostsManager.getProductsList({
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    Alert.instance.closeLoadingAlert(Alert.instance.alert)
+                    self.dataSource = Product.loadToSwiftArray()
+                    self.tableView.reloadData()
+                })
+                
+                
+            }) { (errorCode) in
+                
+            }
+        }
+        else
+        {
             dispatch_async(dispatch_get_main_queue(), {
                 self.dataSource = Product.loadToSwiftArray()
                 self.tableView.reloadData()
             })
-            
-            
-            }) { (errorCode) in
-                
         }
     }
     
@@ -85,5 +107,41 @@ extension ProductViewController: ProductCellDelegate
             self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
             tableView.scrollToRowAtIndexPath(indexPath, atScrollPosition: .Middle , animated: true)
         }
+    }
+}
+
+
+//MARK: REFRESH
+extension ProductViewController
+{
+    func refresh()
+    {
+        refreshBegin {
+            self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
+        }
+    }
+    
+    
+    
+    func refreshBegin(refreshEnd:() -> ())
+    {
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            GetPostsManager.getProductsList({
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    Alert.instance.closeLoadingAlert(Alert.instance.alert)
+                    self.dataSource = Product.loadToSwiftArray()
+                    self.tableView.reloadData()
+                    refreshEnd()
+                })
+                
+                
+            }) { (errorCode) in
+                
+            }
+            
+        })
     }
 }
