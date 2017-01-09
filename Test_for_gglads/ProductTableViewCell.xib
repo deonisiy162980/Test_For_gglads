@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="93" id="KGk-i7-Jjw" customClass="ProductTableViewCell" customModule="Test_for_gglads" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="94"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test" translatesAutoresizingMaskIntoConstraints="NO" id="SsD-0r-aSF">
+                        <rect key="frame" x="8" y="15" width="60" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="60" id="2hf-0H-NDQ"/>
+                            <constraint firstAttribute="width" constant="60" id="Gte-1f-jkC"/>
+                            <constraint firstAttribute="width" constant="60" id="Srg-BJ-pya"/>
+                            <constraint firstAttribute="width" constant="60" id="dJp-hg-fbe"/>
+                            <constraint firstAttribute="height" constant="60" id="kfE-lR-dKD"/>
+                            <constraint firstAttribute="height" constant="60" id="ngr-pT-2T3"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                <integer key="value" value="30"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2hf-0H-NDQ"/>
+                                <exclude reference="Gte-1f-jkC"/>
+                                <exclude reference="Srg-BJ-pya"/>
+                                <exclude reference="kfE-lR-dKD"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Любимка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YeH-eG-7ZU">
+                        <rect key="frame" x="76" y="22" width="183" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="HEi-Ra-33h"/>
+                            <constraint firstAttribute="width" constant="183" id="Jap-WM-xjT"/>
+                            <constraint firstAttribute="height" constant="21" id="k6B-k2-T4R"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="HEi-Ra-33h"/>
+                                <exclude reference="Jap-WM-xjT"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eBx-BD-4n8" customClass="ShowAllButton" customModule="Test_for_gglads" customModuleProvider="target">
+                        <rect key="frame" x="175" y="74" width="32" height="10"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="10" id="7Hz-KK-MXt"/>
+                            <constraint firstAttribute="height" constant="10" id="Szt-v6-djy"/>
+                            <constraint firstAttribute="width" constant="32" id="gnd-fD-Z4E"/>
+                        </constraints>
+                        <state key="normal" image="arrowDown"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7Hz-KK-MXt"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <action selector="showAllTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="vH4-5a-b1R"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Самая прекрасная самая любимая самая веселая самая интересная" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPD-FO-xTT">
+                        <rect key="frame" x="76" y="44" width="216" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="999" constant="22" id="9la-pH-7OP"/>
+                            <constraint firstAttribute="height" constant="22" id="mGV-Ph-r4f"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="ysO-rT-XzI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="9la-pH-7OP"/>
+                                <exclude reference="mGV-Ph-r4f"/>
+                                <exclude reference="ysO-rT-XzI"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3Y-VO-alG">
+                        <rect key="frame" x="287" y="21" width="25" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="9tG-1r-3vZ"/>
+                            <constraint firstAttribute="height" constant="21" id="mBz-pF-dZU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qc-wY-FwE" customClass="LikeButton" customModule="Test_for_gglads" customModuleProvider="target">
+                        <rect key="frame" x="260" y="19" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="9Zk-cc-0Oy"/>
+                            <constraint firstAttribute="width" constant="25" id="hWF-7S-XMd"/>
+                        </constraints>
+                        <state key="normal" image="like"/>
+                        <connections>
+                            <action selector="likeTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pHx-DS-xBp"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="SsD-0r-aSF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="7" id="0og-q6-Egn"/>
+                    <constraint firstItem="eBx-BD-4n8" firstAttribute="top" secondItem="IPD-FO-xTT" secondAttribute="bottom" constant="8" id="3Y6-ka-tMR"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="SsD-0r-aSF" secondAttribute="trailing" constant="244" id="3gH-ij-ZLz"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="IPD-FO-xTT" secondAttribute="bottom" constant="20" id="C5h-We-d9B"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="YeH-eG-7ZU" secondAttribute="bottom" constant="46" id="CfJ-do-F8S"/>
+                    <constraint firstItem="eBx-BD-4n8" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" constant="-2" id="KGJ-G9-Sea"/>
+                    <constraint firstItem="eBx-BD-4n8" firstAttribute="top" secondItem="IPD-FO-xTT" secondAttribute="bottom" constant="8" id="LEB-0T-vCi"/>
+                    <constraint firstItem="IPD-FO-xTT" firstAttribute="top" secondItem="YeH-eG-7ZU" secondAttribute="bottom" constant="1" id="M6K-0F-uI3"/>
+                    <constraint firstItem="a3Y-VO-alG" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Mgg-ok-CvY"/>
+                    <constraint firstItem="a3Y-VO-alG" firstAttribute="leading" secondItem="0Qc-wY-FwE" secondAttribute="trailing" constant="2" id="Tf9-HC-88Z"/>
+                    <constraint firstItem="0Qc-wY-FwE" firstAttribute="leading" secondItem="YeH-eG-7ZU" secondAttribute="trailing" constant="1" id="YpK-B2-p5B"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="IPD-FO-xTT" secondAttribute="trailing" constant="20" id="a0Z-UX-PtK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="YeH-eG-7ZU" secondAttribute="trailing" constant="53" id="aK1-5W-lfo"/>
+                    <constraint firstItem="0Qc-wY-FwE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="11" id="ahc-Ob-IG9"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="SsD-0r-aSF" secondAttribute="bottom" constant="7" id="gdR-vH-W1k"/>
+                    <constraint firstItem="YeH-eG-7ZU" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="14" id="ikN-3y-CMK"/>
+                    <constraint firstItem="YeH-eG-7ZU" firstAttribute="leading" secondItem="SsD-0r-aSF" secondAttribute="trailing" constant="8" id="jSq-87-6af"/>
+                    <constraint firstItem="eBx-BD-4n8" firstAttribute="top" secondItem="SsD-0r-aSF" secondAttribute="bottom" constant="8" id="lDH-Ct-4d0"/>
+                    <constraint firstItem="a3Y-VO-alG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="13" id="rEx-dK-jJr"/>
+                    <constraint firstItem="IPD-FO-xTT" firstAttribute="leading" secondItem="SsD-0r-aSF" secondAttribute="trailing" constant="8" id="sXl-Zc-kf6"/>
+                    <constraint firstItem="eBx-BD-4n8" firstAttribute="centerX" secondItem="IPD-FO-xTT" secondAttribute="centerX" constant="7" id="sp6-GF-zPm"/>
+                    <constraint firstItem="SsD-0r-aSF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="vHG-X8-wAU"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="SsD-0r-aSF" secondAttribute="bottom" constant="7" id="z7T-em-NAe"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="3gH-ij-ZLz"/>
+                        <exclude reference="gdR-vH-W1k"/>
+                        <exclude reference="z7T-em-NAe"/>
+                        <exclude reference="CfJ-do-F8S"/>
+                        <exclude reference="aK1-5W-lfo"/>
+                        <exclude reference="KGJ-G9-Sea"/>
+                        <exclude reference="LEB-0T-vCi"/>
+                        <exclude reference="lDH-Ct-4d0"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="likeButton" destination="0Qc-wY-FwE" id="jYY-dN-acr"/>
+                <outlet property="productImage" destination="SsD-0r-aSF" id="uFV-Wg-D7l"/>
+                <outlet property="productLikesLabel" destination="a3Y-VO-alG" id="jro-Rp-cNe"/>
+                <outlet property="productName" destination="YeH-eG-7ZU" id="TIx-Fr-tmZ"/>
+                <outlet property="productText" destination="IPD-FO-xTT" id="MMG-9b-wpm"/>
+                <outlet property="showAllButton" destination="eBx-BD-4n8" id="Pc8-li-wdA"/>
+                <outlet property="showAllButtonTopConstraint" destination="3Y6-ka-tMR" id="Fh2-1Q-hYV"/>
+            </connections>
+            <point key="canvasLocation" x="288" y="386.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="arrowDown" width="40" height="22"/>
+        <image name="like" width="42" height="42"/>
+        <image name="test" width="1535" height="1054"/>
+    </resources>
+</document>

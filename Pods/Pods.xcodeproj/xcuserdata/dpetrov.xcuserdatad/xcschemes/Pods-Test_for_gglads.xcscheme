@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0730"
+   LastUpgradeVersion = "0700"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "33FE042A1E1ECA8D0061A044"
-               BuildableName = "Test_for_gglads.app"
-               BlueprintName = "Test_for_gglads"
-               ReferencedContainer = "container:Test_for_gglads.xcodeproj">
+               BlueprintIdentifier = "C0F0CB503C0125CD02BB424BBD555E8D"
+               BuildableName = "Pods_Test_for_gglads.framework"
+               BlueprintName = "Pods-Test_for_gglads"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,15 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "33FE042A1E1ECA8D0061A044"
-            BuildableName = "Test_for_gglads.app"
-            BlueprintName = "Test_for_gglads"
-            ReferencedContainer = "container:Test_for_gglads.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -51,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "33FE042A1E1ECA8D0061A044"
-            BuildableName = "Test_for_gglads.app"
-            BlueprintName = "Test_for_gglads"
-            ReferencedContainer = "container:Test_for_gglads.xcodeproj">
+            BlueprintIdentifier = "C0F0CB503C0125CD02BB424BBD555E8D"
+            BuildableName = "Pods_Test_for_gglads.framework"
+            BlueprintName = "Pods-Test_for_gglads"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -70,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "33FE042A1E1ECA8D0061A044"
-            BuildableName = "Test_for_gglads.app"
-            BlueprintName = "Test_for_gglads"
-            ReferencedContainer = "container:Test_for_gglads.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
