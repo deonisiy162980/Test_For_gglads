@@ -16,9 +16,6 @@
 		33F590841E23B30D00ADF0C2 /* LoadCategoriesFromCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F590831E23B30D00ADF0C2 /* LoadCategoriesFromCoreDataManager.swift */; };
 		33F590881E23BA1B00ADF0C2 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F590871E23BA1B00ADF0C2 /* CategoriesViewController.swift */; };
 		33F5908B1E23E31000ADF0C2 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F5908A1E23E31000ADF0C2 /* CategoryTableViewCell.swift */; };
-		33F5908D1E242EEB00ADF0C2 /* Empty.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F5908C1E242EEB00ADF0C2 /* Empty.xib */; };
-		33F5908F1E24340400ADF0C2 /* Empty2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F5908E1E24340400ADF0C2 /* Empty2.xib */; };
-		33F590911E24434600ADF0C2 /* Empty3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F590901E24434600ADF0C2 /* Empty3.xib */; };
 		33FB9F201E22BE30005B6913 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F1F1E22BE30005B6913 /* UILabel.swift */; };
 		33FB9F251E22C4EA005B6913 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F231E22C4EA005B6913 /* SwiftyJSON.swift */; };
 		33FB9F261E22C4EA005B6913 /* API_WRAPPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F241E22C4EA005B6913 /* API_WRAPPER.swift */; };
@@ -53,9 +50,6 @@
 		33F590831E23B30D00ADF0C2 /* LoadCategoriesFromCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadCategoriesFromCoreDataManager.swift; sourceTree = "<group>"; };
 		33F590871E23BA1B00ADF0C2 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		33F5908A1E23E31000ADF0C2 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
-		33F5908C1E242EEB00ADF0C2 /* Empty.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Empty.xib; sourceTree = "<group>"; };
-		33F5908E1E24340400ADF0C2 /* Empty2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Empty2.xib; sourceTree = "<group>"; };
-		33F590901E24434600ADF0C2 /* Empty3.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Empty3.xib; sourceTree = "<group>"; };
 		33FB9F1F1E22BE30005B6913 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		33FB9F231E22C4EA005B6913 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		33FB9F241E22C4EA005B6913 /* API_WRAPPER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_WRAPPER.swift; sourceTree = "<group>"; };
@@ -279,9 +273,6 @@
 			children = (
 				33FE04481E1ECC000061A044 /* ProductTableViewCell.swift */,
 				33FE04491E1ECC000061A044 /* ProductTableViewCell.xib */,
-				33F5908C1E242EEB00ADF0C2 /* Empty.xib */,
-				33F5908E1E24340400ADF0C2 /* Empty2.xib */,
-				33F590901E24434600ADF0C2 /* Empty3.xib */,
 			);
 			name = "Product Cell";
 			sourceTree = "<group>";
@@ -409,10 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33F5908D1E242EEB00ADF0C2 /* Empty.xib in Resources */,
-				33F590911E24434600ADF0C2 /* Empty3.xib in Resources */,
 				33FE043C1E1ECA8D0061A044 /* LaunchScreen.storyboard in Resources */,
-				33F5908F1E24340400ADF0C2 /* Empty2.xib in Resources */,
 				33FE044B1E1ECC000061A044 /* ProductTableViewCell.xib in Resources */,
 				33FE04391E1ECA8D0061A044 /* Assets.xcassets in Resources */,
 				33FE04341E1ECA8D0061A044 /* Main.storyboard in Resources */,
