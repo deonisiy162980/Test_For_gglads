@@ -51,12 +51,15 @@ class ProductTableViewCell: UITableViewCell
     {
         cellModel = model
         
-        let inset : CGFloat = 76
+        let inset : CGFloat = 78
         separatorInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: 0)
         
         productName.text = model.productName
         productLikesLabel.text = String(model.productLikes)
-        productImage.sd_setImageWithURL(NSURL(string: model.productImage!))
+        productImage.sd_setImageWithURL(NSURL(string: model.productImage!), placeholderImage: UIImage(named: "productImage"))
+        
+//        productText.text = model.productText
+//        print(calculateNumberOfPrductTextLines())
         
         if model.selfLiked
         {
@@ -138,5 +141,14 @@ extension ProductTableViewCell
             
         }
         catch{}
+    }
+}
+
+
+extension ProductTableViewCell
+{
+    private func calculateNumberOfPrductTextLines() -> Int
+    {
+        return Int((productText.intrinsicContentSize().width) / productText.frame.width)
     }
 }

@@ -50,10 +50,7 @@ extension ProductViewController
         
         
         //title button
-        let navBarWidth = self.navigationController?.navigationBar.frame.width
-        let navBarHeight = self.navigationController?.navigationBar.frame.height
-        let button =  TitleButton(frame: CGRectMake(0, 0, navBarWidth!/3 + 15, navBarHeight!))
-//        button.backgroundColor = UIColor.redColor()
+        let button =  TitleButton()
         titleButton = button
         self.navigationItem.titleView = titleButton
         titleButton.delegate = self
@@ -64,36 +61,47 @@ extension ProductViewController
         {
             Alert.instance.showLoadingAlert(atView: self.view, withNavigationController: self.navigationController)
             
-            GetPostsManager.getProductsList({
-                
+            loadNewProducts(needClearData: false)
+        }
+        else
+        {
+            if let lastUpdateDate = NSUserDefaults.standardUserDefaults().objectForKey(Const.AppUserDefaults.kLastUpdateDate) as? String
+            {
+                if lastUpdateDate != NSDate().dateToString()
+                {
+                    loadNewProducts(needClearData: true)
+                }
+                else
+                {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        self.categories = Category.loadToSwiftArray()
+                        self.titleButton.setTitle(self.categories.first?.name, forState: .Normal)
+                        
+                        self.dataSource = Product.loadToSwiftArray(withCategory: self.categories.first!)
+                        self.tableView.reloadData()
+                    })
+                }
+            }
+            else
+            {
                 dispatch_async(dispatch_get_main_queue(), {
-                    Alert.instance.closeLoadingAlert(Alert.instance.alert)
-                    
                     self.categories = Category.loadToSwiftArray()
                     self.titleButton.setTitle(self.categories.first?.name, forState: .Normal)
                     
                     self.dataSource = Product.loadToSwiftArray(withCategory: self.categories.first!)
                     self.tableView.reloadData()
                 })
-                
-                
-            }) { (errorCode) in
-                
             }
-        }
-        else
-        {
-            dispatch_async(dispatch_get_main_queue(), {
-                self.categories = Category.loadToSwiftArray()
-                self.titleButton.setTitle(self.categories.first?.name, forState: .Normal)
-                
-                self.dataSource = Product.loadToSwiftArray(withCategory: self.categories.first!)
-                self.tableView.reloadData()
-            })
         }
     }
     
     
+    override func viewWillAppear(animated: Bool)
+    {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
 }
 
 
@@ -150,7 +158,7 @@ extension ProductViewController
     {
         dispatch_async(dispatch_get_main_queue(), {
             
-            GetPostsManager.getProductsList({
+            GetPostsManager.getProductsList(needToCleanData: false, success: {
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     Alert.instance.closeLoadingAlert(Alert.instance.alert)
@@ -263,6 +271,30 @@ extension ProductViewController
         {
             let destinationViewController = segue.destinationViewController as! DetailViewController
             destinationViewController.productModel = self.selectedProduct
+        }
+    }
+}
+
+
+//MARK: LOAD NEW PRODUCTS
+extension ProductViewController
+{
+    func loadNewProducts(needClearData need : Bool)
+    {
+        GetPostsManager.getProductsList(needToCleanData: need, success: { 
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                Alert.instance.closeLoadingAlert(Alert.instance.alert)
+                
+                self.categories = Category.loadToSwiftArray()
+                self.titleButton.setTitle(self.categories.first?.name, forState: .Normal)
+                
+                self.dataSource = Product.loadToSwiftArray(withCategory: self.categories.first!)
+                self.tableView.reloadData()
+            })
+            
+            }) { (errorCode) in
+                
         }
     }
 }

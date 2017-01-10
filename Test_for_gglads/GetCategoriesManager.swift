@@ -11,7 +11,7 @@ import CoreData
 
 class GetCategoriesManager
 {
-    class func getProductsList (context : NSManagedObjectContext, success : () -> Void , failure : (errorCode : Int) -> Void )
+    class func getCategoriesList (context : NSManagedObjectContext, success : () -> Void , failure : (errorCode : Int) -> Void )
     {
         API_WRAPPER.getCategoriesList({ (JsonResponse) in
             

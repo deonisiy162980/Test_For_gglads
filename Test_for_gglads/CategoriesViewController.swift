@@ -48,7 +48,7 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource
         let cell = tableView.dequeueReusableCellWithIdentifier("categoryCell", forIndexPath: indexPath) as! CategoryTableViewCell
         
         var isSelected = false
-        if categoriesDataSource[indexPath.row].name == mainController.titleButton.titleLabel?.text
+        if categoriesDataSource[indexPath.row].name == mainController.titleButton!.titleLabel?.text
         {
             isSelected = true
         }
@@ -66,7 +66,7 @@ extension CategoriesViewController
     {
         let selectedCategory = categoriesDataSource[indexPath.row]
         
-        mainController.titleButton.setTitle(selectedCategory.name, forState: .Normal)
+        mainController.titleButton!.setTitle(selectedCategory.name, forState: .Normal)
         
         self.tableView.reloadData()
         

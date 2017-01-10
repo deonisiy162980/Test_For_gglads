@@ -13,12 +13,19 @@ import CoreData
 
 class GetPostsManager
 {
-    class func getProductsList ( success : () -> Void , failure : (errorCode : Int) -> Void )
+    class func getProductsList ( needToCleanData need : Bool, success : () -> Void , failure : (errorCode : Int) -> Void )
     {
         let privateContext = NSManagedObjectContext(concurrencyType: .PrivateQueueConcurrencyType)
         privateContext.parentContext = CoreDataManager.instance.managedObjectContext
         
-        GetCategoriesManager.getProductsList(privateContext, success: {
+        if need
+        {
+            CoreDataManager.instance.deleteProducts(privateContext)
+            CoreDataManager.instance.deleteCategories(privateContext)
+        }
+        
+        
+        GetCategoriesManager.getCategoriesList(privateContext, success: {
             
             API_WRAPPER.getProductList({ (JsonResponse) in
                 
@@ -33,16 +40,22 @@ class GetPostsManager
                     let pImage = product["screenshot_url"]["300px"].stringValue
                     let pRedirectURL = product["redirect_url"].stringValue
                     let pCategory = product["category_id"].int16Value
-                    //                let pThumbnail = product["thumbnail"]["image_url"].stringValue
-                    
+                    let pThumbnail = product["thumbnail"]["image_url"].stringValue
+                    let pDate = product["day"].stringValue
+                                        
                     let categoryName = Category.reciveNameOfCategory(withId: pCategory, context: privateContext)
                     
-                    ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: pText, withProductLikes: pLikesCount, withProductCategory: categoryName, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withContext: privateContext)
+                    ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: pText, withProductLikes: pLikesCount, withProductCategory: categoryName, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withProductThumbnail: pThumbnail, withProductDAte: pDate, withContext: privateContext)
                     
                 }
                 
                 
                 try? privateContext.save()
+                
+                let todayDate = NSDate().dateToString()
+                NSUserDefaults.standardUserDefaults().setObject(todayDate, forKey: Const.AppUserDefaults.kLastUpdateDate)
+                NSUserDefaults.standardUserDefaults().synchronize()
+                
                 success()
                 
             }) { (errorCode) in
@@ -105,5 +118,4 @@ extension GetPostsManager
             })
         }
     }
-    
 }

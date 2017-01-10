@@ -20,6 +20,8 @@ class ProductFabric
                                withProductImage image : String?,
                                withSelfLike selfLike : Bool,
                                withProductRedirectURL redirectURL: String?,
+                               withProductThumbnail thumbnail : String,
+                               withProductDAte date : String,
                                withContext context : NSManagedObjectContext
                              ) -> Product?
     {
@@ -41,6 +43,8 @@ class ProductFabric
                 product.category = category
                 product.productImage = image
                 product.redirectURL = redirectURL
+                product.thumbnail = thumbnail
+                product.date = date
                 
                 return product
             }
@@ -56,6 +60,8 @@ class ProductFabric
                 product.productImage = image
                 product.redirectURL = redirectURL
                 product.selfLiked = selfLike
+                product.thumbnail = thumbnail
+                product.date = date
                 
                 return product
                 
@@ -77,6 +83,8 @@ class ProductFabric
                         product.category = category
                         product.productImage = image
                         product.redirectURL = redirectURL
+                        product.thumbnail = thumbnail
+                        product.date = date
                         
                         productToReturn = product
                     }

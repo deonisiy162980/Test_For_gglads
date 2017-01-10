@@ -7,6 +7,7 @@
     </entity>
     <entity name="Product" representedClassName=".Product" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <attribute name="needShowAll" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="productImage" optional="YES" attributeType="String" syncable="YES"/>
@@ -15,9 +16,10 @@
         <attribute name="productText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="redirectURL" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="selfLiked" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Product" positionX="-63" positionY="-18" width="128" height="180"/>
         <element name="Category" positionX="-63" positionY="54" width="128" height="90"/>
+        <element name="Product" positionX="-63" positionY="-18" width="128" height="210"/>
     </elements>
 </model>

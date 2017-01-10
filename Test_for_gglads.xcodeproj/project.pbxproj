@@ -16,6 +16,7 @@
 		33F590881E23BA1B00ADF0C2 /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F590871E23BA1B00ADF0C2 /* CategoriesViewController.swift */; };
 		33F5908B1E23E31000ADF0C2 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F5908A1E23E31000ADF0C2 /* CategoryTableViewCell.swift */; };
 		33F590951E244EC200ADF0C2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F590941E244EC200ADF0C2 /* DetailViewController.swift */; };
+		33F590981E24588B00ADF0C2 /* LocalNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F590971E24588B00ADF0C2 /* LocalNotificationsManager.swift */; };
 		33FB9F201E22BE30005B6913 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F1F1E22BE30005B6913 /* UILabel.swift */; };
 		33FB9F251E22C4EA005B6913 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F231E22C4EA005B6913 /* SwiftyJSON.swift */; };
 		33FB9F261E22C4EA005B6913 /* API_WRAPPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F241E22C4EA005B6913 /* API_WRAPPER.swift */; };
@@ -24,6 +25,10 @@
 		33FB9F2F1E22CB97005B6913 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F2D1E22CB97005B6913 /* Alerts.swift */; };
 		33FB9F301E22CB97005B6913 /* TopMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F2E1E22CB97005B6913 /* TopMessages.swift */; };
 		33FB9F361E22CFBF005B6913 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F351E22CFBF005B6913 /* Product+CoreDataProperties.swift */; };
+		33FCFC8F1E24FBEB00AD46F7 /* BackgroundFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC8E1E24FBEB00AD46F7 /* BackgroundFetchManager.swift */; };
+		33FCFC961E251C0D00AD46F7 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC951E251C0D00AD46F7 /* LogViewController.swift */; };
+		33FCFC981E251C3D00AD46F7 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC971E251C3D00AD46F7 /* LogManager.swift */; };
+		33FCFC9A1E25202A00AD46F7 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC991E25202A00AD46F7 /* NSDate.swift */; };
 		33FD57581E200ABB00ADA93C /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD57571E200ABB00ADA93C /* LikeButton.swift */; };
 		33FD575A1E200CB400ADA93C /* ShowAllButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD57591E200CB400ADA93C /* ShowAllButton.swift */; };
 		33FD6BA91E214E8B0012B0AF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD6BA81E214E8B0012B0AF /* Protocols.swift */; };
@@ -50,6 +55,7 @@
 		33F590871E23BA1B00ADF0C2 /* CategoriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
 		33F5908A1E23E31000ADF0C2 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		33F590941E244EC200ADF0C2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		33F590971E24588B00ADF0C2 /* LocalNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationsManager.swift; sourceTree = "<group>"; };
 		33FB9F1F1E22BE30005B6913 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		33FB9F231E22C4EA005B6913 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		33FB9F241E22C4EA005B6913 /* API_WRAPPER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_WRAPPER.swift; sourceTree = "<group>"; };
@@ -58,6 +64,10 @@
 		33FB9F2D1E22CB97005B6913 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		33FB9F2E1E22CB97005B6913 /* TopMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMessages.swift; sourceTree = "<group>"; };
 		33FB9F351E22CFBF005B6913 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Product+CoreDataProperties.swift"; path = "../Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		33FCFC8E1E24FBEB00AD46F7 /* BackgroundFetchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundFetchManager.swift; sourceTree = "<group>"; };
+		33FCFC951E251C0D00AD46F7 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		33FCFC971E251C3D00AD46F7 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		33FCFC991E25202A00AD46F7 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		33FD57571E200ABB00ADA93C /* LikeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		33FD57591E200CB400ADA93C /* ShowAllButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAllButton.swift; sourceTree = "<group>"; };
 		33FD6BA81E214E8B0012B0AF /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -149,10 +159,19 @@
 			name = Viiew;
 			sourceTree = "<group>";
 		};
+		33F590961E24587500ADF0C2 /* Local Notifications Manager */ = {
+			isa = PBXGroup;
+			children = (
+				33F590971E24588B00ADF0C2 /* LocalNotificationsManager.swift */,
+			);
+			name = "Local Notifications Manager";
+			sourceTree = "<group>";
+		};
 		33FB9F1E1E22BE1E005B6913 /* CLASS EXTENSIONS */ = {
 			isa = PBXGroup;
 			children = (
 				33FB9F1F1E22BE30005B6913 /* UILabel.swift */,
+				33FCFC991E25202A00AD46F7 /* NSDate.swift */,
 			);
 			name = "CLASS EXTENSIONS";
 			sourceTree = "<group>";
@@ -160,6 +179,8 @@
 		33FB9F211E22C4CE005B6913 /* GENERAL MANAGERS */ = {
 			isa = PBXGroup;
 			children = (
+				33FCFC8D1E24FBBE00AD46F7 /* Background Fetch Manager */,
+				33F590961E24587500ADF0C2 /* Local Notifications Manager */,
 				33FB9F2C1E22CB7E005B6913 /* Alerts */,
 				33FB9F221E22C4DB005B6913 /* API_WRAPPER and JSON */,
 			);
@@ -190,6 +211,23 @@
 				33FB9F2E1E22CB97005B6913 /* TopMessages.swift */,
 			);
 			name = Alerts;
+			sourceTree = "<group>";
+		};
+		33FCFC8D1E24FBBE00AD46F7 /* Background Fetch Manager */ = {
+			isa = PBXGroup;
+			children = (
+				33FCFC8E1E24FBEB00AD46F7 /* BackgroundFetchManager.swift */,
+			);
+			name = "Background Fetch Manager";
+			sourceTree = "<group>";
+		};
+		33FCFC941E251BFE00AD46F7 /* LOG */ = {
+			isa = PBXGroup;
+			children = (
+				33FCFC971E251C3D00AD46F7 /* LogManager.swift */,
+				33FCFC951E251C0D00AD46F7 /* LogViewController.swift */,
+			);
+			name = LOG;
 			sourceTree = "<group>";
 		};
 		33FD57561E200A9B00ADA93C /* CustomClasses */ = {
@@ -232,6 +270,7 @@
 		33FE042D1E1ECA8D0061A044 /* Test_for_gglads */ = {
 			isa = PBXGroup;
 			children = (
+				33FCFC941E251BFE00AD46F7 /* LOG */,
 				33F590921E244E9C00ADF0C2 /* DETAIL CONTROLLER */,
 				33F590851E23B9F000ADF0C2 /* CATEGORIES CONTROLLER */,
 				33FB9F271E22C530005B6913 /* CONST */,
@@ -390,6 +429,12 @@
 				TargetAttributes = {
 					33FE042A1E1ECA8D0061A044 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = P3W686PZLF;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -479,10 +524,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F5907B1E23ABB500ADF0C2 /* GetCategoriesManager.swift in Sources */,
+				33FCFC961E251C0D00AD46F7 /* LogViewController.swift in Sources */,
 				33FE045F1E1EE88C0061A044 /* ProductFabric.swift in Sources */,
 				33FE04311E1ECA8D0061A044 /* ProductViewController.swift in Sources */,
 				33FD6BA91E214E8B0012B0AF /* Protocols.swift in Sources */,
 				33FB9F201E22BE30005B6913 /* UILabel.swift in Sources */,
+				33FCFC981E251C3D00AD46F7 /* LogManager.swift in Sources */,
 				33FB9F301E22CB97005B6913 /* TopMessages.swift in Sources */,
 				33FB9F251E22C4EA005B6913 /* SwiftyJSON.swift in Sources */,
 				33FE044A1E1ECC000061A044 /* ProductTableViewCell.swift in Sources */,
@@ -497,10 +544,13 @@
 				33FD57581E200ABB00ADA93C /* LikeButton.swift in Sources */,
 				33FB9F361E22CFBF005B6913 /* Product+CoreDataProperties.swift in Sources */,
 				33FB9F291E22C53B005B6913 /* Const.swift in Sources */,
+				33FCFC9A1E25202A00AD46F7 /* NSDate.swift in Sources */,
+				33F590981E24588B00ADF0C2 /* LocalNotificationsManager.swift in Sources */,
 				33F5907F1E23ACC600ADF0C2 /* Category+CoreDataProperties.swift in Sources */,
 				33FD575A1E200CB400ADA93C /* ShowAllButton.swift in Sources */,
 				33F590821E23AD5A00ADF0C2 /* CategoryFabric.swift in Sources */,
 				33FB9F2F1E22CB97005B6913 /* Alerts.swift in Sources */,
+				33FCFC8F1E24FBEB00AD46F7 /* BackgroundFetchManager.swift in Sources */,
 				33F590771E23970700ADF0C2 /* TitleButton.swift in Sources */,
 				33FE04561E1EE4520061A044 /* Product.swift in Sources */,
 				33F5908B1E23E31000ADF0C2 /* CategoryTableViewCell.swift in Sources */,
@@ -618,11 +668,14 @@
 			baseConfigurationReference = C0141E9036C6538FF3BA982A /* Pods-Test_for_gglads.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Test_for_gglads/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "DP.Test-for-gglads";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -631,11 +684,14 @@
 			baseConfigurationReference = 22535185546140ADEC093485 /* Pods-Test_for_gglads.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Test_for_gglads/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "DP.Test-for-gglads";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

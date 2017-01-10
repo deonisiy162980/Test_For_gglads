@@ -23,4 +23,6 @@ extension Product
     @NSManaged var selfLiked: Bool
     @NSManaged var needShowAll: Bool
     @NSManaged var redirectURL: String?
+    @NSManaged var thumbnail: String?
+    @NSManaged var date: String?
 }

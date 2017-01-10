@@ -16,9 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let notofication = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        application.registerUserNotificationSettings(notofication)
+        
+        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
+//        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(10)
+        
+        
         return true
     }
+    
+    
+    func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void)
+    {
+        LogManager.addStringToLog(withText: "Starting background fetch task")
+        BackgroundFetchManager.getUpdates({
+            LogManager.addStringToLog(withText: "New items received!")
+            completionHandler(.NewData)
+            }) { (errorCode) in
+                if errorCode == 0
+                {
+                    LogManager.addStringToLog(withText: "Nothing new")
+                    completionHandler(.NoData)
+                }
+                else
+                {
+                    LogManager.addStringToLog(withText: "Update error")
+                    completionHandler(.Failed)
+                }
+        }
+    }
+    
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

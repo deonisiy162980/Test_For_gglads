@@ -44,7 +44,7 @@ class CoreDataManager
             dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
             dict[NSLocalizedFailureReasonErrorKey] = failureReason
             
-            dict[NSUnderlyingErrorKey] = error as! NSError
+            dict[NSUnderlyingErrorKey] = error as NSError
             let wrappedError = NSError(domain: "YOUR_ERROR_DOMAIN", code: 9999, userInfo: dict)
             
             NSLog("Unresolved error \(wrappedError), \(wrappedError.userInfo)")
@@ -113,5 +113,54 @@ extension CoreDataManager
         let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         
         return frc
+    }
+}
+
+
+//MARK: Очистка устаревших данных
+extension CoreDataManager
+{
+    func deleteProducts (context : NSManagedObjectContext)
+    {
+        let insideSemaphore = dispatch_semaphore_create(0)
+        
+        let fetchRequest = NSFetchRequest(entityName: "Product")
+        
+        do
+        {
+            let fetchedEntities = try context.executeFetchRequest(fetchRequest)
+            
+            for product in fetchedEntities {
+                context.deleteObject(product as! NSManagedObject)
+            }
+            
+            dispatch_semaphore_signal(insideSemaphore)
+        }
+        catch{}
+        
+        dispatch_semaphore_wait(insideSemaphore, DISPATCH_TIME_FOREVER)
+    }
+    
+    
+    func deleteCategories (context : NSManagedObjectContext)
+    {
+        let insideSemaphore = dispatch_semaphore_create(0)
+        
+        let fetchRequest = NSFetchRequest(entityName: "Category")
+        
+        do
+        {
+            let fetchedEntities = try context.executeFetchRequest(fetchRequest)
+            
+            for category in fetchedEntities {
+                context.deleteObject(category as! NSManagedObject)
+            }
+            
+            dispatch_semaphore_signal(insideSemaphore)
+        }
+        catch{}
+        
+        dispatch_semaphore_wait(insideSemaphore, DISPATCH_TIME_FOREVER)
+        
     }
 }

@@ -61,4 +61,18 @@ class Product: NSManagedObject
         
         return arrayToReturn
     }
+    
+    
+    class func arrayContains( thisProduct product : Product, inThisArray array : [Product] ) -> Bool
+    {
+        for item in array
+        {
+            if item.id == product.id
+            {
+                return true
+            }
+        }
+        
+        return false
+    }
 }
