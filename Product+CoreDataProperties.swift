@@ -22,6 +22,7 @@ extension Product
     @NSManaged var productText: String?
     @NSManaged var selfLiked: Bool
     @NSManaged var needShowAll: Bool
+    @NSManaged var isIntresting: Bool
     @NSManaged var redirectURL: String?
     @NSManaged var thumbnail: String?
     @NSManaged var date: String?

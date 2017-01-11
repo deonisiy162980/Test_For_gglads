@@ -9,6 +9,7 @@
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="date" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="isIntresting" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="needShowAll" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="productImage" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="productLikes" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -20,6 +21,6 @@
     </entity>
     <elements>
         <element name="Category" positionX="-63" positionY="54" width="128" height="90"/>
-        <element name="Product" positionX="-63" positionY="-18" width="128" height="210"/>
+        <element name="Product" positionX="-63" positionY="-18" width="128" height="225"/>
     </elements>
 </model>

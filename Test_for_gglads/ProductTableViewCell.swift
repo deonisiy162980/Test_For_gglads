@@ -44,6 +44,7 @@ class ProductTableViewCell: UITableViewCell
         showAllButtonTopConstraint.constant = 8
         showAllButton.alpha = 1.0
         showAllButton.enabled = true
+        self.backgroundColor = UIColor.clearColor()
     }
     
     
@@ -51,15 +52,20 @@ class ProductTableViewCell: UITableViewCell
     {
         cellModel = model
         
-        let inset : CGFloat = 78
+        let inset : CGFloat = 86
         separatorInset = UIEdgeInsets(top: 0, left: inset, bottom: 0, right: 0)
         
         productName.text = model.productName
         productLikesLabel.text = String(model.productLikes)
         productImage.sd_setImageWithURL(NSURL(string: model.productImage!), placeholderImage: UIImage(named: "productImage"))
         
-//        productText.text = model.productText
-//        print(calculateNumberOfPrductTextLines())
+        if model.isIntresting
+        {
+            self.backgroundColor = Const.appColors.intrestingCellColor
+        }
+        
+        productText.text = model.productText
+        print(calculateNumberOfPrductTextLines())
         
         if model.selfLiked
         {

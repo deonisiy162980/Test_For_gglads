@@ -62,6 +62,7 @@ class ProductFabric
                 product.selfLiked = selfLike
                 product.thumbnail = thumbnail
                 product.date = date
+                product.isIntresting = false
                 
                 return product
                 

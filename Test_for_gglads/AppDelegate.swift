@@ -31,6 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void)
     {
         LogManager.addStringToLog(withText: "Starting background fetch task")
+        LocalNotificationsManager.sendNotification(withTitle: "started fetch", withBody: "Starting background fetch task")
+        
         BackgroundFetchManager.getUpdates({
             LogManager.addStringToLog(withText: "New items received!")
             completionHandler(.NewData)

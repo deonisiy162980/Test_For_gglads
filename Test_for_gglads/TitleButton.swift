@@ -93,9 +93,9 @@ extension TitleButton
         self.setTitleColor(.blackColor(), forState: .Normal)
         self.titleLabel?.font = UIFont(name: "Arial", size: 22)
         
+        self.setImage(image, forState: .Normal)
         self.frame = CGRectMake(0, 0, self.intrinsicContentSize().width + image!.size.width + 30, self.intrinsicContentSize().height)
         self.titleEdgeInsets = UIEdgeInsetsMake(0.0, 0.0, 0.0, image!.size.width);
-        self.imageEdgeInsets = UIEdgeInsetsMake(4.0, self.frame.size.width + (image!.size.width) - 30, 0.0, 0.0)
-        self.setImage(image, forState: .Normal)
+        self.imageEdgeInsets = UIEdgeInsetsMake(4.2, self.frame.size.width + (image!.size.width) - 35, 0.0, 0.0)
     }
 }

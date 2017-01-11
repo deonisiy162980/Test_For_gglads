@@ -29,6 +29,7 @@ class Const
     class appColors
     {
         static let defaultBlueColor = UIColor(red:0/255.0, green:122/255.0, blue:255/255.0, alpha: 1.0)
+        static let intrestingCellColor = UIColor(red:255/255.0, green:230/255.0, blue:113/255.0, alpha: 1.0)
     }
     
     class AppUserDefaults

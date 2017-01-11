@@ -69,6 +69,8 @@ extension ProductViewController
             {
                 if lastUpdateDate != NSDate().dateToString()
                 {
+                    Alert.instance.showLoadingAlert(atView: self.view, withNavigationController: self.navigationController)
+                    
                     loadNewProducts(needClearData: true)
                 }
                 else
@@ -123,6 +125,34 @@ extension ProductViewController: UITableViewDelegate, UITableViewDataSource
         cell.configureCell(model)
         
         return cell
+    }
+    
+    
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]?
+    {
+        let model = dataSource[indexPath.row]
+        
+        if model.isIntresting
+        {
+            let notIntresting = UITableViewRowAction(style: .Normal, title: "Not intresting") { action, index in
+                tableView.setEditing(false, animated: true)
+                self.setModelIntresting(isIntresting: false, withModel: model, atIndexPath: indexPath)
+            }
+            notIntresting.backgroundColor = UIColor.redColor()
+            
+            return [notIntresting]
+        }
+        else
+        {
+            let intresting = UITableViewRowAction(style: .Normal, title: "Intresting") { action, index in
+                tableView.setEditing(false, animated: true)
+                self.setModelIntresting(isIntresting: true, withModel: model, atIndexPath: indexPath)
+            }
+            intresting.backgroundColor = UIColor.orangeColor()
+            
+            return [intresting]
+        }
+        
     }
 }
 
@@ -296,5 +326,37 @@ extension ProductViewController
             }) { (errorCode) in
                 
         }
+    }
+}
+
+
+//MARK: CELL SWIPE ACTIONS
+extension ProductViewController
+{
+    func setModelIntresting( isIntresting intresting : Bool, withModel model : Product, atIndexPath indexPath : NSIndexPath )
+    {
+        let fetchRequest = NSFetchRequest(entityName: "Product")
+        fetchRequest.predicate = NSPredicate(format: "id=%lld", model.id)
+        
+        do
+        {
+            let fetchResults = try CoreDataManager.instance.managedObjectContext.executeFetchRequest(fetchRequest)
+            
+            if let fetchedProduct = fetchResults.first as? Product
+            {
+                if intresting
+                {
+                    fetchedProduct.isIntresting = true
+                }
+                else
+                {
+                    fetchedProduct.isIntresting = false
+                }
+                
+                self.tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Right)
+            }
+            
+        }
+        catch{}
     }
 }
