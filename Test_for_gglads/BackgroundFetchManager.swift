@@ -36,10 +36,11 @@ class BackgroundFetchManager
                 let pCategory = product["category_id"].int16Value
                 let pThumbnail = product["thumbnail"]["image_url"].stringValue
                 let pDate = product["day"].stringValue
+                let pBigImage = product["screenshot_url"]["850px"].stringValue
                 
                 let categoryName = Category.reciveNameOfCategory(withId: pCategory, context: privateContext)
                 
-                let recivedProduct = ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: pText, withProductLikes: pLikesCount, withProductCategory: categoryName, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withProductThumbnail: pThumbnail, withProductDAte: pDate, withContext: privateContext)
+                let recivedProduct = ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: pText, withProductLikes: pLikesCount, withProductCategory: categoryName, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withProductThumbnail: pThumbnail, withProductDAte: pDate, withProductBigImage: pBigImage, withContext: privateContext)
                 
                 if !Product.arrayContains(thisProduct: recivedProduct!, inThisArray: loadedPosts)
                 {

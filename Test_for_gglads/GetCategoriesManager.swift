@@ -29,7 +29,7 @@ class GetCategoriesManager
             success()
             
             }) { (errorCode) in
-                
+                failure(errorCode: errorCode)
         }
     }
 }

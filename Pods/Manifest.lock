@@ -1,14 +1,17 @@
 PODS:
+  - EasyAnimation (1.0.5)
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
 
 DEPENDENCIES:
+  - EasyAnimation (~> 1.0.0)
   - SDWebImage
 
 SPEC CHECKSUMS:
+  EasyAnimation: 32821f37dd39187e7364369a3d8f65d38405cf1d
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 700e0833206c8947cc0d7daede00ef80c6a4079f
+PODFILE CHECKSUM: 13f8de8372cba055c888bfd97c2e9bb0e07e4ba1
 
 COCOAPODS: 1.1.1

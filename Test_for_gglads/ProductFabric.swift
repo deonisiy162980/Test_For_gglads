@@ -22,6 +22,7 @@ class ProductFabric
                                withProductRedirectURL redirectURL: String?,
                                withProductThumbnail thumbnail : String,
                                withProductDAte date : String,
+                               withProductBigImage bigImage : String,
                                withContext context : NSManagedObjectContext
                              ) -> Product?
     {
@@ -45,6 +46,7 @@ class ProductFabric
                 product.redirectURL = redirectURL
                 product.thumbnail = thumbnail
                 product.date = date
+                product.productBigImage = bigImage
                 
                 return product
             }
@@ -63,6 +65,7 @@ class ProductFabric
                 product.thumbnail = thumbnail
                 product.date = date
                 product.isIntresting = false
+                product.productBigImage = bigImage
                 
                 return product
                 
@@ -86,6 +89,7 @@ class ProductFabric
                         product.redirectURL = redirectURL
                         product.thumbnail = thumbnail
                         product.date = date
+                        product.productBigImage = bigImage
                         
                         productToReturn = product
                     }

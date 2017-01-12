@@ -15,7 +15,7 @@ import UIKit
 class Alert
 {
     static let instance = Alert()
-    var alert : (UIView?, UIView?, UIActivityIndicatorView?)?
+    var alert : (containerView : UIView?, backgroundColor : UIView?, loadingIndicator : UIActivityIndicatorView?)?
     
     func showLoadingAlert( atView view : UIView, withNavigationController navController : UINavigationController?)
     {
@@ -62,17 +62,17 @@ class Alert
         }
     }
     
-    func closeLoadingAlert( alertToRemove: (containerView : UIView?, backgroundColor : UIView?, loadingIndicator : UIActivityIndicatorView?)? )
+    func closeLoadingAlert()
     {
-        if Alert.instance.alert != nil
+        if let alertForRemove = self.alert
         {
             UIView.animateWithDuration(0.2, animations: {
-                alertToRemove!.containerView!.alpha = 0.0
-                alertToRemove!.backgroundColor!.alpha = 0.0
+                alertForRemove.containerView!.alpha = 0.0
+                alertForRemove.backgroundColor!.alpha = 0.0
             }) { (hide) in
-                alertToRemove!.containerView!.removeFromSuperview()
-                alertToRemove!.backgroundColor!.removeFromSuperview()
-                alertToRemove!.loadingIndicator!.removeFromSuperview()
+                alertForRemove.containerView!.removeFromSuperview()
+                alertForRemove.backgroundColor!.removeFromSuperview()
+                alertForRemove.loadingIndicator!.removeFromSuperview()
             }
         }
         else

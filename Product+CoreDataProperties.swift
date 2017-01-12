@@ -17,6 +17,7 @@ extension Product
     @NSManaged var category: String?
     @NSManaged var id: Int64
     @NSManaged var productImage: String?
+    @NSManaged var productBigImage: String?
     @NSManaged var productLikes: Int16
     @NSManaged var productName: String?
     @NSManaged var productText: String?

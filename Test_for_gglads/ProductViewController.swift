@@ -188,20 +188,45 @@ extension ProductViewController
     {
         dispatch_async(dispatch_get_main_queue(), {
             
-            GetPostsManager.getProductsList(needToCleanData: false, success: {
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    Alert.instance.closeLoadingAlert(Alert.instance.alert)
-                    self.dataSource = Product.loadToSwiftArray()
-                    self.tableView.reloadData()
-                    refreshEnd()
-                })
-                
-                
-            }) { (errorCode) in
-                
+            if let lastUpdateDate = NSUserDefaults.standardUserDefaults().objectForKey(Const.AppUserDefaults.kLastUpdateDate) as? String
+            {
+                if lastUpdateDate != NSDate().dateToString()
+                {
+                    GetPostsManager.getProductsList(needToCleanData: true, success: {
+                        
+                        dispatch_async(dispatch_get_main_queue(), {
+                            Alert.instance.closeLoadingAlert()
+                            self.dataSource = Product.loadToSwiftArray()
+                            self.tableView.reloadData()
+                            refreshEnd()
+                        })
+                        
+                        
+                    }) { (errorCode) in
+                        GetPostsManager.showError(errorCode, viewController: self, hasTopBar: true, successBlock: {
+                            Alert.instance.closeLoadingAlert()
+                        })
+                    }
+                }
+                else
+                {
+                    GetPostsManager.getProductsList(needToCleanData: false, success: {
+                        
+                        dispatch_async(dispatch_get_main_queue(), {
+                            Alert.instance.closeLoadingAlert()
+                            self.dataSource = Product.loadToSwiftArray()
+                            self.tableView.reloadData()
+                            refreshEnd()
+                        })
+                        
+                        
+                    }) { (errorCode) in
+                        GetPostsManager.showError(errorCode, viewController: self, hasTopBar: true, successBlock: {
+                            Alert.instance.closeLoadingAlert()
+                        })
+                    }
+                }
             }
-            
         })
     }
 }
@@ -314,7 +339,7 @@ extension ProductViewController
         GetPostsManager.getProductsList(needToCleanData: need, success: { 
             
             dispatch_async(dispatch_get_main_queue(), {
-                Alert.instance.closeLoadingAlert(Alert.instance.alert)
+                Alert.instance.closeLoadingAlert()
                 
                 self.categories = Category.loadToSwiftArray()
                 self.titleButton.setTitle(self.categories.first?.name, forState: .Normal)
@@ -324,7 +349,9 @@ extension ProductViewController
             })
             
             }) { (errorCode) in
-                
+                GetPostsManager.showError(errorCode, viewController: self, hasTopBar: true, successBlock: { 
+                    Alert.instance.closeLoadingAlert()
+                })
         }
     }
 }

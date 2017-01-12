@@ -42,10 +42,11 @@ class GetPostsManager
                     let pCategory = product["category_id"].int16Value
                     let pThumbnail = product["thumbnail"]["image_url"].stringValue
                     let pDate = product["day"].stringValue
+                    let pBigImage = product["screenshot_url"]["850px"].stringValue
                                         
                     let categoryName = Category.reciveNameOfCategory(withId: pCategory, context: privateContext)
                     
-                    ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: pText, withProductLikes: pLikesCount, withProductCategory: categoryName, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withProductThumbnail: pThumbnail, withProductDAte: pDate, withContext: privateContext)
+                    ProductFabric.createOrUpdate(withProductId: pID, withProductName: pName, withProductText: pText, withProductLikes: pLikesCount, withProductCategory: categoryName, withProductImage: pImage, withSelfLike: false, withProductRedirectURL: pRedirectURL, withProductThumbnail: pThumbnail, withProductDAte: pDate, withProductBigImage: pBigImage, withContext: privateContext)
                     
                 }
                 
@@ -65,7 +66,7 @@ class GetPostsManager
             
         }) { (errorCode) in
             
-            failure(errorCode: 1)
+            failure(errorCode: errorCode)
             
         }
         
@@ -77,26 +78,7 @@ class GetPostsManager
 //MARK: Показывает всплывающее вверху окно с ошибкой
 extension GetPostsManager
 {
-    private class func showError(errorCode : Int, viewController : UIViewController, hasTopBar : Bool)
-    {
-        if errorCode == 0
-        {
-            dispatch_async(dispatch_get_main_queue(), {
-                TopMessages.showMessageTop("Нет соединения с интернетом", viewController: viewController, hasTopBar: hasTopBar)
-                print("Нет соединения с интернетом")
-            })
-        }
-        
-        if errorCode == 1
-        {
-            dispatch_async(dispatch_get_main_queue(), {
-                TopMessages.showMessageTop("Превышено время запроса", viewController: viewController, hasTopBar: hasTopBar)
-                print("Превышено время запроса")
-            })
-        }
-    }
-    
-    private class func showError(errorCode : Int, viewController : UIViewController, hasTopBar : Bool, successBlock success : ()->Void )
+    class func showError(errorCode : Int, viewController : UIViewController, hasTopBar : Bool, successBlock success : ()->Void )
     {
         if errorCode == 0
         {

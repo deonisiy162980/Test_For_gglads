@@ -29,6 +29,9 @@
 		33FCFC961E251C0D00AD46F7 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC951E251C0D00AD46F7 /* LogViewController.swift */; };
 		33FCFC981E251C3D00AD46F7 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC971E251C3D00AD46F7 /* LogManager.swift */; };
 		33FCFC9A1E25202A00AD46F7 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC991E25202A00AD46F7 /* NSDate.swift */; };
+		33FD53441E27CBED009FDF65 /* DPClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD53431E27CBED009FDF65 /* DPClass.swift */; };
+		33FD53461E27DC0A009FDF65 /* BL_StatusBarActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD53451E27DC0A009FDF65 /* BL_StatusBarActivityIndicator.swift */; };
+		33FD53491E27E9EE009FDF65 /* StarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD53481E27E9EE009FDF65 /* StarButton.swift */; };
 		33FD57581E200ABB00ADA93C /* LikeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD57571E200ABB00ADA93C /* LikeButton.swift */; };
 		33FD575A1E200CB400ADA93C /* ShowAllButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD57591E200CB400ADA93C /* ShowAllButton.swift */; };
 		33FD6BA91E214E8B0012B0AF /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD6BA81E214E8B0012B0AF /* Protocols.swift */; };
@@ -68,6 +71,9 @@
 		33FCFC951E251C0D00AD46F7 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
 		33FCFC971E251C3D00AD46F7 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		33FCFC991E25202A00AD46F7 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		33FD53431E27CBED009FDF65 /* DPClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPClass.swift; sourceTree = "<group>"; };
+		33FD53451E27DC0A009FDF65 /* BL_StatusBarActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BL_StatusBarActivityIndicator.swift; sourceTree = "<group>"; };
+		33FD53481E27E9EE009FDF65 /* StarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarButton.swift; sourceTree = "<group>"; };
 		33FD57571E200ABB00ADA93C /* LikeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeButton.swift; sourceTree = "<group>"; };
 		33FD57591E200CB400ADA93C /* ShowAllButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowAllButton.swift; sourceTree = "<group>"; };
 		33FD6BA81E214E8B0012B0AF /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -146,6 +152,7 @@
 		33F590921E244E9C00ADF0C2 /* DETAIL CONTROLLER */ = {
 			isa = PBXGroup;
 			children = (
+				33FD53471E27E9D2009FDF65 /* Custom classes */,
 				33F590931E244EAA00ADF0C2 /* Viiew */,
 			);
 			name = "DETAIL CONTROLLER";
@@ -179,6 +186,7 @@
 		33FB9F211E22C4CE005B6913 /* GENERAL MANAGERS */ = {
 			isa = PBXGroup;
 			children = (
+				33FD53421E27CB3F009FDF65 /* DPClass */,
 				33FCFC8D1E24FBBE00AD46F7 /* Background Fetch Manager */,
 				33F590961E24587500ADF0C2 /* Local Notifications Manager */,
 				33FB9F2C1E22CB7E005B6913 /* Alerts */,
@@ -190,6 +198,7 @@
 		33FB9F221E22C4DB005B6913 /* API_WRAPPER and JSON */ = {
 			isa = PBXGroup;
 			children = (
+				33FD53451E27DC0A009FDF65 /* BL_StatusBarActivityIndicator.swift */,
 				33FB9F231E22C4EA005B6913 /* SwiftyJSON.swift */,
 				33FB9F241E22C4EA005B6913 /* API_WRAPPER.swift */,
 			);
@@ -228,6 +237,22 @@
 				33FCFC951E251C0D00AD46F7 /* LogViewController.swift */,
 			);
 			name = LOG;
+			sourceTree = "<group>";
+		};
+		33FD53421E27CB3F009FDF65 /* DPClass */ = {
+			isa = PBXGroup;
+			children = (
+				33FD53431E27CBED009FDF65 /* DPClass.swift */,
+			);
+			name = DPClass;
+			sourceTree = "<group>";
+		};
+		33FD53471E27E9D2009FDF65 /* Custom classes */ = {
+			isa = PBXGroup;
+			children = (
+				33FD53481E27E9EE009FDF65 /* StarButton.swift */,
+			);
+			name = "Custom classes";
 			sourceTree = "<group>";
 		};
 		33FD57561E200A9B00ADA93C /* CustomClasses */ = {
@@ -538,12 +563,14 @@
 				33FE044A1E1ECC000061A044 /* ProductTableViewCell.swift in Sources */,
 				33FE042F1E1ECA8D0061A044 /* AppDelegate.swift in Sources */,
 				33FE04371E1ECA8D0061A044 /* Test_for_gglads.xcdatamodeld in Sources */,
+				33FD53461E27DC0A009FDF65 /* BL_StatusBarActivityIndicator.swift in Sources */,
 				33FB9F2B1E22CAB7005B6913 /* GetPostsManager.swift in Sources */,
 				33F590881E23BA1B00ADF0C2 /* CategoriesViewController.swift in Sources */,
 				33FB9F261E22C4EA005B6913 /* API_WRAPPER.swift in Sources */,
 				33F590951E244EC200ADF0C2 /* DetailViewController.swift in Sources */,
 				33FE045D1E1EE7FB0061A044 /* CoreDataManager.swift in Sources */,
 				33F590801E23ACC600ADF0C2 /* Category.swift in Sources */,
+				33FD53441E27CBED009FDF65 /* DPClass.swift in Sources */,
 				33FD57581E200ABB00ADA93C /* LikeButton.swift in Sources */,
 				33FB9F361E22CFBF005B6913 /* Product+CoreDataProperties.swift in Sources */,
 				33FB9F291E22C53B005B6913 /* Const.swift in Sources */,
@@ -557,6 +584,7 @@
 				33F590771E23970700ADF0C2 /* TitleButton.swift in Sources */,
 				33FE04561E1EE4520061A044 /* Product.swift in Sources */,
 				33F5908B1E23E31000ADF0C2 /* CategoryTableViewCell.swift in Sources */,
+				33FD53491E27E9EE009FDF65 /* StarButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

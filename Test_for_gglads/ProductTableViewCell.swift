@@ -64,9 +64,6 @@ class ProductTableViewCell: UITableViewCell
             self.backgroundColor = Const.appColors.intrestingCellColor
         }
         
-        productText.text = model.productText
-        print(calculateNumberOfPrductTextLines())
-        
         if model.selfLiked
         {
             likeButton.isSelect = true
@@ -76,9 +73,9 @@ class ProductTableViewCell: UITableViewCell
             likeButton.isSelect = false
         }
         
-        if !model.needShowAll
+        if model.needShowAll == false
         {
-            if model.productText?.characters.count <= 78
+            if productText.text?.characters.count <= 78
             {
                 showAllButton.alpha = 0.0
                 showAllButton.enabled = false
@@ -153,8 +150,16 @@ extension ProductTableViewCell
 
 extension ProductTableViewCell
 {
-    private func calculateNumberOfPrductTextLines() -> Int
+    //not used because low perfomance
+    private func calculateNumberOfPrductTextLines( withWidth width : CGFloat ) -> Int
     {
-        return Int((productText.intrinsicContentSize().width) / productText.frame.width)
+        let label = UILabel(frame: CGRectMake(0, 0, width, CGFloat.max))
+        label.numberOfLines = 0
+        label.text = cellModel?.productText
+        label.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        label.font = productText.font
+        label.sizeToFit()
+        
+        return Int(label.frame.height) / 16
     }
 }

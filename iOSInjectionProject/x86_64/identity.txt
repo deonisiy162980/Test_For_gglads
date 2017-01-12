@@ -1,0 +1,2 @@
+/Users/dpetrov/Library/Developer/Xcode/DerivedData/Test_for_gglads-epokdkyozsttcngfmnhkapvgvgpm/Build/Products/Debug-iphonesimulator/Test_for_gglads.app
+iPhone Developer

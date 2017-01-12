@@ -17,6 +17,7 @@ class Const
         static let kBaseMethod = "https://api.producthunt.com/v1/"
         static let kGetPosts = "posts"
         static let kGetCategories = "categories"
+        static let kLikeProdyct = "posts/1/vote"
     }
     
     class AppApiAttributes
@@ -24,6 +25,7 @@ class Const
         static let kAccessToken = "access_token"
         static let kDay = "day"
         static let kDays_ago = "days_ago"
+        static let kPostId = "post_id"
     }
     
     class appColors
