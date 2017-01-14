@@ -20,9 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let notofication = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(notofication)
         
-        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)
-//        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(10)
-        
+        UIApplication.sharedApplication().setMinimumBackgroundFetchInterval(UIApplicationBackgroundFetchIntervalMinimum)        
         
         return true
     }
@@ -30,21 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, performFetchWithCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void)
     {
-        LogManager.addStringToLog(withText: "Starting background fetch task")
-        LocalNotificationsManager.sendNotification(withTitle: "started fetch", withBody: "Starting background fetch task")
-        
         BackgroundFetchManager.getUpdates({
-            LogManager.addStringToLog(withText: "New items received!")
             completionHandler(.NewData)
             }) { (errorCode) in
                 if errorCode == 0
                 {
-                    LogManager.addStringToLog(withText: "Nothing new")
                     completionHandler(.NoData)
                 }
                 else
                 {
-                    LogManager.addStringToLog(withText: "Update error")
                     completionHandler(.Failed)
                 }
         }

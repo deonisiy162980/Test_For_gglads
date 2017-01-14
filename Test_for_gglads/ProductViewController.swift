@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UIColor_Hex_Swift
 
 
 private let ProductCell = "ProductCell"
@@ -25,6 +26,8 @@ class ProductViewController: UIViewController
     weak var popController : CategoriesViewController!
     var backView : UIView! //when categories opened
     var selectedProduct : Product?
+    var checkedCategory : Category!
+    var needToCleanDateWithFirstResponse = false
 }
 
 
@@ -35,7 +38,7 @@ extension ProductViewController
     {
         super.viewDidLoad()
         
-        //register nibb for tableView
+        //register nib for tableView
         let nib = UINib(nibName: "ProductTableViewCell", bundle: nil)
         tableView.registerNib(nib, forCellReuseIdentifier: ProductCell)
         tableView.estimatedRowHeight = 70.0
@@ -57,43 +60,29 @@ extension ProductViewController
         
         
         //load
-        if Product.loadToSwiftArray().count == 0
+        if dataSource.count == 0
         {
             Alert.instance.showLoadingAlert(atView: self.view, withNavigationController: self.navigationController)
             
-            loadNewProducts(needClearData: false)
-        }
-        else
-        {
-            if let lastUpdateDate = NSUserDefaults.standardUserDefaults().objectForKey(Const.AppUserDefaults.kLastUpdateDate) as? String
+            if needToCleanDateWithFirstResponse
             {
-                if lastUpdateDate != NSDate().dateToString()
-                {
-                    Alert.instance.showLoadingAlert(atView: self.view, withNavigationController: self.navigationController)
-                    
-                    loadNewProducts(needClearData: true)
-                }
-                else
-                {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        self.categories = Category.loadToSwiftArray()
-                        self.titleButton.setTitle(self.categories.first?.name, forState: .Normal)
-                        
-                        self.dataSource = Product.loadToSwiftArray(withCategory: self.categories.first!)
-                        self.tableView.reloadData()
-                    })
-                }
+                loadNewProducts(withCategory: nil, needClearData: true, success:  nil)
+                needToCleanDateWithFirstResponse = false
             }
             else
             {
-                dispatch_async(dispatch_get_main_queue(), {
-                    self.categories = Category.loadToSwiftArray()
-                    self.titleButton.setTitle(self.categories.first?.name, forState: .Normal)
-                    
-                    self.dataSource = Product.loadToSwiftArray(withCategory: self.categories.first!)
-                    self.tableView.reloadData()
-                })
+                loadNewProducts(withCategory: nil, needClearData: false, success:  nil)
             }
+        }
+        else
+        {
+            dispatch_async(dispatch_get_main_queue(), {
+                self.titleButton.setTitle(withHexColor: (self.checkedCategory.color)!, withTitle: self.checkedCategory.name, forState: .Normal)
+                self.navigationController?.navigationBar.tintColor = UIColor(rgba: self.checkedCategory.color!)
+                
+                self.dataSource = Product.loadToSwiftArray(withCategory: self.checkedCategory)
+                self.tableView.reloadData()
+            })
         }
     }
     
@@ -192,39 +181,15 @@ extension ProductViewController
             {
                 if lastUpdateDate != NSDate().dateToString()
                 {
-                    GetPostsManager.getProductsList(needToCleanData: true, success: {
-                        
-                        dispatch_async(dispatch_get_main_queue(), {
-                            Alert.instance.closeLoadingAlert()
-                            self.dataSource = Product.loadToSwiftArray()
-                            self.tableView.reloadData()
-                            refreshEnd()
-                        })
-                        
-                        
-                    }) { (errorCode) in
-                        GetPostsManager.showError(errorCode, viewController: self, hasTopBar: true, successBlock: {
-                            Alert.instance.closeLoadingAlert()
-                        })
-                    }
+                    self.loadNewProducts(withCategory: self.checkedCategory, needClearData: true, success: {
+                        refreshEnd()
+                    })
                 }
                 else
                 {
-                    GetPostsManager.getProductsList(needToCleanData: false, success: {
-                        
-                        dispatch_async(dispatch_get_main_queue(), {
-                            Alert.instance.closeLoadingAlert()
-                            self.dataSource = Product.loadToSwiftArray()
-                            self.tableView.reloadData()
-                            refreshEnd()
-                        })
-                        
-                        
-                    }) { (errorCode) in
-                        GetPostsManager.showError(errorCode, viewController: self, hasTopBar: true, successBlock: {
-                            Alert.instance.closeLoadingAlert()
-                        })
-                    }
+                    self.loadNewProducts(withCategory: self.checkedCategory, needClearData: false, success: {
+                        refreshEnd()
+                    })
                 }
             }
         })
@@ -334,7 +299,7 @@ extension ProductViewController
 //MARK: LOAD NEW PRODUCTS
 extension ProductViewController
 {
-    func loadNewProducts(needClearData need : Bool)
+    func loadNewProducts(withCategory category : Category?, needClearData need : Bool, success : (()->Void)?)
     {
         GetPostsManager.getProductsList(needToCleanData: need, success: { 
             
@@ -342,15 +307,37 @@ extension ProductViewController
                 Alert.instance.closeLoadingAlert()
                 
                 self.categories = Category.loadToSwiftArray()
-                self.titleButton.setTitle(self.categories.first?.name, forState: .Normal)
+                if category == nil
+                {
+                    self.checkedCategory = self.categories.first!
+                }
+                self.titleButton.setTitle("", forState: .Normal)
+                self.titleButton.setTitle(withHexColor: (self.checkedCategory.color)!, withTitle: self.checkedCategory.name, forState: .Normal)
+                self.navigationController?.navigationBar.tintColor = UIColor(rgba: self.checkedCategory.color!)
                 
-                self.dataSource = Product.loadToSwiftArray(withCategory: self.categories.first!)
+                if category == nil
+                {
+                    self.dataSource = Product.loadToSwiftArray(withCategory: self.checkedCategory)
+                }
+                else
+                {
+                    self.dataSource = Product.loadToSwiftArray(withCategory: category!)
+                }
                 self.tableView.reloadData()
+                
+                if success != nil
+                {
+                    success!()
+                }
             })
             
             }) { (errorCode) in
                 GetPostsManager.showError(errorCode, viewController: self, hasTopBar: true, successBlock: { 
                     Alert.instance.closeLoadingAlert()
+                    if success != nil
+                    {
+                        success!()
+                    }
                 })
         }
     }

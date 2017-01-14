@@ -21,7 +21,7 @@ class CoreDataManager
     lazy var applicationDocumentsDirectory: NSURL = {
         /*Здесь четыре переменные, все они инициализируются с помощью замыкания. Однако, первая из них, applicationDocumentsDirectory — просто вспомогательный метод, который возвращает директорию для хранения данных. По умолчанию, это Document Directory, можно изменить, но маловероятно, что вам это действительно надо. Реализация проста и не должна вызывать затруднений для понимания.*/
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
-        print(urls[urls.count-1])
+//        print(urls[urls.count-1])
         return urls[urls.count-1]
     }()
     

@@ -1,17 +1,17 @@
 //
-//  LikeButton.swift
+//  GetItButton.swift
 //  Test_for_gglads
 //
-//  Created by Denis on 06.01.17.
+//  Created by Denis on 13.01.17.
 //  Copyright © 2017 Denis. All rights reserved.
 //
 
 import UIKit
 
-class LikeButton: UIButton
+class GetItButton: UIButton
 {
     private var animDidEnd = true
-    
+    private var image = UIImageView()
     
     
     override init(frame: CGRect)
@@ -24,32 +24,16 @@ class LikeButton: UIButton
         super.init(coder: aDecoder)
         
     }
-    
-    @IBInspectable
-    var isSelect: Bool = false
-        {
-        didSet {
-            if isSelect
-            {
-                self.setImage(UIImage(named: "liked"), forState: .Normal)
-            }
-            else
-            {
-                self.setImage(UIImage(named: "like"), forState: .Normal)
-            }
-            layoutSubviews()
-        }
-    }
 }
 
 
 //MARK: BUTTON ANIMS
-extension LikeButton
+extension GetItButton
 {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
         //---------anim settings----------\\
-        let scaleSize : CGFloat = 1.25
+        let scaleSize : CGFloat = 1.15
         let animDuration = 0.15
         //--------------------------------\\
         
@@ -59,14 +43,6 @@ extension LikeButton
             
             animDidEnd = false
             
-            if self.isSelect
-            {
-                self.isSelect = false
-            }
-            else
-            {
-                self.isSelect = true
-            }
             UIView.animateWithDuration(animDuration, animations: {
                 self.transform.a = scaleSize
                 self.transform.d = scaleSize

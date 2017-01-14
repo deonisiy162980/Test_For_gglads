@@ -66,11 +66,13 @@ extension CategoriesViewController
     {
         let selectedCategory = categoriesDataSource[indexPath.row]
         
-        mainController.titleButton!.setTitle(selectedCategory.name, forState: .Normal)
+        mainController.titleButton!.setTitle(withHexColor: selectedCategory.color!, withTitle: selectedCategory.name, forState: .Normal)
+        self.navigationController?.navigationBar.tintColor = UIColor(rgba: selectedCategory.color!)
         
         self.tableView.reloadData()
         
         mainController.dataSource = Product.loadToSwiftArray(withCategory: selectedCategory)
+        mainController.checkedCategory = selectedCategory
         mainController.tableView.reloadData()
         
         mainController.closeCategoriesByTappingBackView()

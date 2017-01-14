@@ -58,7 +58,6 @@ class BL_StatusBarActivityIndicator: NSObject
     {
         dispatch_async ( dispatch_get_main_queue())
         {
-//            print("indicator counter \(self.indicatorCounter)")
             UIApplication.sharedApplication().networkActivityIndicatorVisible = self.indicatorCounter > 0
         }
         

@@ -19,8 +19,10 @@ class DetailViewController: UIViewController
     @IBOutlet weak var likeButton: LikeButton!
     @IBOutlet weak var imageLeftConstraint: NSLayoutConstraint!
     @IBOutlet weak var intrestingButton: StarButton!
+    @IBOutlet weak var getItButton: UIButton!
     
     var productModel : Product?
+    var defaultNavigationControllerTintColor : UIColor!
     var bigImage : UIImageView!
     var backView : UIView!
     var animation : CABasicAnimation!
@@ -40,6 +42,7 @@ extension DetailViewController
         productText.text = productModel?.productText
         productName.text = productModel?.productName
         likesCount.text = String(productModel!.productLikes)
+        getItButton.backgroundColor = self.navigationController?.navigationBar.tintColor
         
         if productModel!.selfLiked
         {
@@ -169,6 +172,7 @@ extension DetailViewController
                 }
             })
             
+            productImage.alpha = 0.0
             
             UIView.animateWithDuration(0.4, animations: {
                 let imageSize : CGFloat = self.view.frame.height / 2.0
@@ -194,6 +198,7 @@ extension DetailViewController
                 self.loadingIndicator.alpha = 0.0
             }) { (done) in
                 
+                self.productImage.alpha = 1.0
                 self.loadingIndicator.removeFromSuperview()
                 self.bigImage.removeFromSuperview()
                 self.backView.removeFromSuperview()

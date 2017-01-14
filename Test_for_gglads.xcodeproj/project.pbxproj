@@ -17,7 +17,6 @@
 		33F5908B1E23E31000ADF0C2 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F5908A1E23E31000ADF0C2 /* CategoryTableViewCell.swift */; };
 		33F590951E244EC200ADF0C2 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F590941E244EC200ADF0C2 /* DetailViewController.swift */; };
 		33F590981E24588B00ADF0C2 /* LocalNotificationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F590971E24588B00ADF0C2 /* LocalNotificationsManager.swift */; };
-		33FB9F201E22BE30005B6913 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F1F1E22BE30005B6913 /* UILabel.swift */; };
 		33FB9F251E22C4EA005B6913 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F231E22C4EA005B6913 /* SwiftyJSON.swift */; };
 		33FB9F261E22C4EA005B6913 /* API_WRAPPER.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F241E22C4EA005B6913 /* API_WRAPPER.swift */; };
 		33FB9F291E22C53B005B6913 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F281E22C53B005B6913 /* Const.swift */; };
@@ -25,9 +24,9 @@
 		33FB9F2F1E22CB97005B6913 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F2D1E22CB97005B6913 /* Alerts.swift */; };
 		33FB9F301E22CB97005B6913 /* TopMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F2E1E22CB97005B6913 /* TopMessages.swift */; };
 		33FB9F361E22CFBF005B6913 /* Product+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB9F351E22CFBF005B6913 /* Product+CoreDataProperties.swift */; };
+		33FCBC5F1E28FE8F00DF7DF1 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCBC5E1E28FE8F00DF7DF1 /* LaunchViewController.swift */; };
+		33FCBC631E292ED900DF7DF1 /* GetItButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCBC621E292ED900DF7DF1 /* GetItButton.swift */; };
 		33FCFC8F1E24FBEB00AD46F7 /* BackgroundFetchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC8E1E24FBEB00AD46F7 /* BackgroundFetchManager.swift */; };
-		33FCFC961E251C0D00AD46F7 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC951E251C0D00AD46F7 /* LogViewController.swift */; };
-		33FCFC981E251C3D00AD46F7 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC971E251C3D00AD46F7 /* LogManager.swift */; };
 		33FCFC9A1E25202A00AD46F7 /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FCFC991E25202A00AD46F7 /* NSDate.swift */; };
 		33FD53441E27CBED009FDF65 /* DPClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD53431E27CBED009FDF65 /* DPClass.swift */; };
 		33FD53461E27DC0A009FDF65 /* BL_StatusBarActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD53451E27DC0A009FDF65 /* BL_StatusBarActivityIndicator.swift */; };
@@ -59,7 +58,6 @@
 		33F5908A1E23E31000ADF0C2 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		33F590941E244EC200ADF0C2 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		33F590971E24588B00ADF0C2 /* LocalNotificationsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationsManager.swift; sourceTree = "<group>"; };
-		33FB9F1F1E22BE30005B6913 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		33FB9F231E22C4EA005B6913 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		33FB9F241E22C4EA005B6913 /* API_WRAPPER.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API_WRAPPER.swift; sourceTree = "<group>"; };
 		33FB9F281E22C53B005B6913 /* Const.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -67,9 +65,9 @@
 		33FB9F2D1E22CB97005B6913 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
 		33FB9F2E1E22CB97005B6913 /* TopMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopMessages.swift; sourceTree = "<group>"; };
 		33FB9F351E22CFBF005B6913 /* Product+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Product+CoreDataProperties.swift"; path = "../Product+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		33FCBC5E1E28FE8F00DF7DF1 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		33FCBC621E292ED900DF7DF1 /* GetItButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetItButton.swift; sourceTree = "<group>"; };
 		33FCFC8E1E24FBEB00AD46F7 /* BackgroundFetchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundFetchManager.swift; sourceTree = "<group>"; };
-		33FCFC951E251C0D00AD46F7 /* LogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
-		33FCFC971E251C3D00AD46F7 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		33FCFC991E25202A00AD46F7 /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		33FD53431E27CBED009FDF65 /* DPClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DPClass.swift; sourceTree = "<group>"; };
 		33FD53451E27DC0A009FDF65 /* BL_StatusBarActivityIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BL_StatusBarActivityIndicator.swift; sourceTree = "<group>"; };
@@ -153,17 +151,17 @@
 			isa = PBXGroup;
 			children = (
 				33FD53471E27E9D2009FDF65 /* Custom classes */,
-				33F590931E244EAA00ADF0C2 /* Viiew */,
+				33F590931E244EAA00ADF0C2 /* View */,
 			);
 			name = "DETAIL CONTROLLER";
 			sourceTree = "<group>";
 		};
-		33F590931E244EAA00ADF0C2 /* Viiew */ = {
+		33F590931E244EAA00ADF0C2 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				33F590941E244EC200ADF0C2 /* DetailViewController.swift */,
 			);
-			name = Viiew;
+			name = View;
 			sourceTree = "<group>";
 		};
 		33F590961E24587500ADF0C2 /* Local Notifications Manager */ = {
@@ -177,7 +175,6 @@
 		33FB9F1E1E22BE1E005B6913 /* CLASS EXTENSIONS */ = {
 			isa = PBXGroup;
 			children = (
-				33FB9F1F1E22BE30005B6913 /* UILabel.swift */,
 				33FCFC991E25202A00AD46F7 /* NSDate.swift */,
 			);
 			name = "CLASS EXTENSIONS";
@@ -222,21 +219,31 @@
 			name = Alerts;
 			sourceTree = "<group>";
 		};
+		33FCBC601E29294D00DF7DF1 /* LAUNCH CONTROLLER */ = {
+			isa = PBXGroup;
+			children = (
+				33FCBC5E1E28FE8F00DF7DF1 /* LaunchViewController.swift */,
+			);
+			name = "LAUNCH CONTROLLER";
+			sourceTree = "<group>";
+		};
+		33FCBC611E292B0200DF7DF1 /* CONTROLLERS */ = {
+			isa = PBXGroup;
+			children = (
+				33FCBC601E29294D00DF7DF1 /* LAUNCH CONTROLLER */,
+				33F590921E244E9C00ADF0C2 /* DETAIL CONTROLLER */,
+				33F590851E23B9F000ADF0C2 /* CATEGORIES CONTROLLER */,
+				33FE04451E1ECB750061A044 /* PRODUCTS CONTROLLER */,
+			);
+			name = CONTROLLERS;
+			sourceTree = "<group>";
+		};
 		33FCFC8D1E24FBBE00AD46F7 /* Background Fetch Manager */ = {
 			isa = PBXGroup;
 			children = (
 				33FCFC8E1E24FBEB00AD46F7 /* BackgroundFetchManager.swift */,
 			);
 			name = "Background Fetch Manager";
-			sourceTree = "<group>";
-		};
-		33FCFC941E251BFE00AD46F7 /* LOG */ = {
-			isa = PBXGroup;
-			children = (
-				33FCFC971E251C3D00AD46F7 /* LogManager.swift */,
-				33FCFC951E251C0D00AD46F7 /* LogViewController.swift */,
-			);
-			name = LOG;
 			sourceTree = "<group>";
 		};
 		33FD53421E27CB3F009FDF65 /* DPClass */ = {
@@ -251,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				33FD53481E27E9EE009FDF65 /* StarButton.swift */,
+				33FCBC621E292ED900DF7DF1 /* GetItButton.swift */,
 			);
 			name = "Custom classes";
 			sourceTree = "<group>";
@@ -295,14 +303,11 @@
 		33FE042D1E1ECA8D0061A044 /* Test_for_gglads */ = {
 			isa = PBXGroup;
 			children = (
-				33FCFC941E251BFE00AD46F7 /* LOG */,
-				33F590921E244E9C00ADF0C2 /* DETAIL CONTROLLER */,
-				33F590851E23B9F000ADF0C2 /* CATEGORIES CONTROLLER */,
+				33FCBC611E292B0200DF7DF1 /* CONTROLLERS */,
 				33FB9F271E22C530005B6913 /* CONST */,
 				33FB9F211E22C4CE005B6913 /* GENERAL MANAGERS */,
 				33FB9F1E1E22BE1E005B6913 /* CLASS EXTENSIONS */,
 				33FD6BA71E214E800012B0AF /* PROTOCOLS */,
-				33FE04451E1ECB750061A044 /* PRODUCTS CONTROLLER */,
 				33FE04431E1ECB3B0061A044 /* OTHER */,
 				33FE04441E1ECB5F0061A044 /* CORE DATA */,
 			);
@@ -552,12 +557,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F5907B1E23ABB500ADF0C2 /* GetCategoriesManager.swift in Sources */,
-				33FCFC961E251C0D00AD46F7 /* LogViewController.swift in Sources */,
+				33FCBC5F1E28FE8F00DF7DF1 /* LaunchViewController.swift in Sources */,
 				33FE045F1E1EE88C0061A044 /* ProductFabric.swift in Sources */,
 				33FE04311E1ECA8D0061A044 /* ProductViewController.swift in Sources */,
 				33FD6BA91E214E8B0012B0AF /* Protocols.swift in Sources */,
-				33FB9F201E22BE30005B6913 /* UILabel.swift in Sources */,
-				33FCFC981E251C3D00AD46F7 /* LogManager.swift in Sources */,
 				33FB9F301E22CB97005B6913 /* TopMessages.swift in Sources */,
 				33FB9F251E22C4EA005B6913 /* SwiftyJSON.swift in Sources */,
 				33FE044A1E1ECC000061A044 /* ProductTableViewCell.swift in Sources */,
@@ -565,6 +568,7 @@
 				33FE04371E1ECA8D0061A044 /* Test_for_gglads.xcdatamodeld in Sources */,
 				33FD53461E27DC0A009FDF65 /* BL_StatusBarActivityIndicator.swift in Sources */,
 				33FB9F2B1E22CAB7005B6913 /* GetPostsManager.swift in Sources */,
+				33FCBC631E292ED900DF7DF1 /* GetItButton.swift in Sources */,
 				33F590881E23BA1B00ADF0C2 /* CategoriesViewController.swift in Sources */,
 				33FB9F261E22C4EA005B6913 /* API_WRAPPER.swift in Sources */,
 				33F590951E244EC200ADF0C2 /* DetailViewController.swift in Sources */,

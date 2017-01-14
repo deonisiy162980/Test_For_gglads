@@ -54,7 +54,7 @@ class Alert
                 view.addSubview(loadingIndicator)
             }
             
-            Alert.instance.alert = (containerView, backgroundColor, loadingIndicator)
+            self.alert = (containerView, backgroundColor, loadingIndicator)
         }
         else
         {

@@ -10,8 +10,8 @@ import UIKit
 
 class StarButton: UIButton
 {
-    var animDidEnd = true
-    var image = UIImageView()
+    private var animDidEnd = true
+    private var image = UIImageView()
     
     
     override init(frame: CGRect)
@@ -38,7 +38,6 @@ class StarButton: UIButton
             else
             {
                 image.image = UIImage(named: "star")
-//                self.tintColor = UIColor.blackColor()
                 self.setImage(image.image, forState: .Normal)
             }
             layoutSubviews()

@@ -21,6 +21,15 @@ class BackgroundFetchManager
         let loadedPosts = Product.loadToSwiftArray()
         var newPosts = [Product]()
         
+        if let lastUpdateDate = NSUserDefaults.standardUserDefaults().objectForKey(Const.AppUserDefaults.kLastUpdateDate) as? String
+        {
+            if lastUpdateDate != NSDate().dateToString()
+            {
+                CoreDataManager.instance.deleteProducts(privateContext)
+                CoreDataManager.instance.deleteCategories(privateContext)
+            }
+        }
+        
         API_WRAPPER.getProductList({ (JsonResponse) in
             
             let productsArray = JsonResponse["posts"].arrayValue

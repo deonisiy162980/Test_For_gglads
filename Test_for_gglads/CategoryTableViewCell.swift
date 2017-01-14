@@ -34,6 +34,10 @@ class CategoryTableViewCell: UITableViewCell
         {
             self.categoryName.textColor = Const.appColors.defaultBlueColor
         }
+        else
+        {
+            self.categoryName.textColor = UIColor(rgba: category.color!)
+        }
     }
     
     

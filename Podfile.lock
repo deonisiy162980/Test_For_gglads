@@ -3,15 +3,18 @@ PODS:
   - SDWebImage (3.8.2):
     - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
+  - UIColor_Hex_Swift (2.3)
 
 DEPENDENCIES:
   - EasyAnimation (~> 1.0.0)
   - SDWebImage
+  - UIColor_Hex_Swift (~> 2.1)
 
 SPEC CHECKSUMS:
   EasyAnimation: 32821f37dd39187e7364369a3d8f65d38405cf1d
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  UIColor_Hex_Swift: 18bb48e9f1ed16c87f4ea7bf7e03853b43030812
 
-PODFILE CHECKSUM: 13f8de8372cba055c888bfd97c2e9bb0e07e4ba1
+PODFILE CHECKSUM: 9654085b0d69b68cb16f7595edc4ef70e3562e2b
 
 COCOAPODS: 1.1.1

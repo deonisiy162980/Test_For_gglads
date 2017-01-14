@@ -10,7 +10,7 @@ import UIKit
 
 class ShowAllButton: UIButton
 {
-    var animDidEnd = true
+    private var animDidEnd = true
     
     
     
