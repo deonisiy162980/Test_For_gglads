@@ -26,6 +26,10 @@ class LaunchViewController: UIViewController
     {
         super.viewDidAppear(animated)
         
+        let xxx = "2017-01-01"
+        NSUserDefaults.standardUserDefaults().setObject(xxx, forKey: Const.AppUserDefaults.kLastUpdateDate)
+        NSUserDefaults.standardUserDefaults().synchronize()
+        
         if Product.loadToSwiftArray().count != 0
         {
             if let lastUpdateDate = NSUserDefaults.standardUserDefaults().objectForKey(Const.AppUserDefaults.kLastUpdateDate) as? String
@@ -58,7 +62,7 @@ class LaunchViewController: UIViewController
     {
         if segue.identifier == "toMain"
         {
-            if dataSource.count != 0 && categories.count != 0
+            if Category.loadToSwiftArray().count != 0 && Product.loadToSwiftArray().count != 0
             {
                 let navVC = segue.destinationViewController as! UINavigationController
                 let destinationViewController = navVC.viewControllers.first as! ProductViewController
