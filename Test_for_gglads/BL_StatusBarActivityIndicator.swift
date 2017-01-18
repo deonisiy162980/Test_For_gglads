@@ -20,7 +20,7 @@ class BL_StatusBarActivityIndicator: NSObject
     {
         dispatch_once( &pred ) {
             
-            singletonInstance = BL_StatusBarActivityIndicator ()
+            singletonInstance = BL_StatusBarActivityIndicator()
         }
         
         return singletonInstance!

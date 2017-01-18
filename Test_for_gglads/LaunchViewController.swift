@@ -26,10 +26,6 @@ class LaunchViewController: UIViewController
     {
         super.viewDidAppear(animated)
         
-        let xxx = "2017-01-01"
-        NSUserDefaults.standardUserDefaults().setObject(xxx, forKey: Const.AppUserDefaults.kLastUpdateDate)
-        NSUserDefaults.standardUserDefaults().synchronize()
-        
         if Product.loadToSwiftArray().count != 0
         {
             if let lastUpdateDate = NSUserDefaults.standardUserDefaults().objectForKey(Const.AppUserDefaults.kLastUpdateDate) as? String
